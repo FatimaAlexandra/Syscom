@@ -45,5 +45,16 @@ namespace Syscom
             // Mostrar el formulario de clientes (modal) - Bloquea Form1 hasta que se cierre el formulario de clientes
             formClientes.ShowDialog();
         }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario de proveedores
+            FormularioProveedores formProveedores = new FormularioProveedores();
+
+            // Mostrar el formulario de proveedores
+            formProveedores.ShowDialog();
+        }
     }
+
+
 }

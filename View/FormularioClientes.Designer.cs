@@ -51,7 +51,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(112, 116);
+            label1.Location = new Point(112, 112);
             label1.Name = "label1";
             label1.Size = new Size(91, 24);
             label1.TabIndex = 0;
@@ -89,7 +89,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(246, 117);
+            txtNombre.Location = new Point(246, 109);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(390, 27);
             txtNombre.TabIndex = 4;
@@ -135,7 +135,7 @@
             btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
-            btnLimpiar.Click += btnLimpiar_Click;
+            btnLimpiar.Click += this.btnLimpiar_Click;
             // 
             // dgvClientes
             // 
@@ -148,7 +148,7 @@
             dgvClientes.RowTemplate.Height = 29;
             dgvClientes.Size = new Size(769, 200);
             dgvClientes.TabIndex = 10;
-            dgvClientes.SelectionChanged += dgvClientes_SelectionChanged;
+            dgvClientes.SelectionChanged += this.dgvClientes_SelectionChanged;
             // 
             // groupBox1
             // 
@@ -162,7 +162,7 @@
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Acciones";
-            groupBox1.Enter += groupBox1_Enter;
+            groupBox1.Enter += this.groupBox1_Enter;
             // 
             // btnEliminarCliente
             // 
@@ -213,7 +213,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormularioClientes";
-            Text = "FormularioClientes";
+            Text = "FormularioProveedores";
             Load += FormularioClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             groupBox1.ResumeLayout(false);

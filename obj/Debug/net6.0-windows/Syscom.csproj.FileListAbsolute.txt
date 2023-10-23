@@ -34,3 +34,4 @@ C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.pdb
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.genruntimeconfig.cache
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\ref\Syscom.dll
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioClientes.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioProveedores.resources
