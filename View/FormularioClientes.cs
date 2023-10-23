@@ -53,13 +53,13 @@ namespace Syscom.View
         private void CargarClientesEnDataGridView()
         {
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.DefaultCellStyle.SelectionBackColor = Color.Blue;
-            dgvClientes.DefaultCellStyle.SelectionForeColor = Color.White;
-
 
             // Limpia el DataGridView antes de cargar los datos.
             dgvClientes.Rows.Clear();
             dgvClientes.Columns.Clear(); // Limpia las columnas también
+
+            // Evitar que se agregue automáticamente una fila en blanco al final
+            dgvClientes.AllowUserToAddRows = false;
 
             List<ClientesModel> listaClientes = clientesController.ObtenerClientes();
 
@@ -67,7 +67,7 @@ namespace Syscom.View
             dgvClientes.Columns.Add("Id", "ID");
             dgvClientes.Columns.Add("Nombre", "Nombre");
             dgvClientes.Columns.Add("Email", "Email");
-            dgvClientes.Columns.Add("Telefono", "Teléfono");
+            dgvClientes.Columns.Add("Telefono", "Telefono");
             dgvClientes.Columns.Add("Empresa", "Empresa");
             // Ocultar la columna "ID"
             dgvClientes.Columns["Id"].Visible = false;
@@ -182,6 +182,45 @@ namespace Syscom.View
                     CargarClientesEnDataGridView();
                 }
             }
+        }
+
+        private void dgvClientes_SelectionChanged_1(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView.
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                // Obtener el cliente seleccionado.
+                DataGridViewRow filaSeleccionada = dgvClientes.SelectedRows[0];
+
+                // Obtener los datos del cliente desde las celdas del DataGridView.
+                int clienteId = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                string email = filaSeleccionada.Cells["Email"].Value.ToString();
+                string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
+                string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
+
+                // Cargar los datos del cliente en los TextBox para edición.
+                txtNombre.Text = nombre;
+                txtEmail.Text = email;
+                txtTelefono.Text = telefono;
+                txtEmpresa.Text = empresa;
+
+                // Habilitar los TextBox para edición.
+                txtNombre.Enabled = true;
+                txtEmail.Enabled = true;
+                txtTelefono.Enabled = true;
+                txtEmpresa.Enabled = true;
+            }
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvClientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvClientes.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
         }
     }
 }
