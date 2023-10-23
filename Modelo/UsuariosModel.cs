@@ -9,44 +9,40 @@ namespace Syscom.Modelo
 {
     internal class UsuariosModel
     {
-        private int Id { get; }
-        private string Usuario { get; }
-        private string Password { get; }
-        private string Email { get; }
-        private string Rol { get; }
+        private int id;
+        private string usuario;
+        private string pass;
+        private string email;
+        private string rol;
 
-        public UsuariosModel(int id, string usuario, string password, string email, string rol)
+        public int Id
         {
-            Id = id;
-            Usuario = usuario;
-            Password = password;
-            Email = email;
-            Rol = rol;
+            get { return id; }
+            set { id = value; }
         }
 
-        public int ObtenerId()
+        public string Usuario
         {
-            return Id;
+            get { return usuario; }
+            set { usuario = value; }
         }
 
-        public string ObtenerUsuario()
+        public string Pass
         {
-            return Usuario;
+            get { return pass; }
+            set { pass = value; }
         }
 
-        public string ObtenerPassword()
+        public string Email
         {
-            return Password;
+            get { return email; }
+            set { email = value; }
         }
 
-        public string ObtenerEmail()
+        public string Rol
         {
-            return Email;
-        }
-
-        public string ObtenerRol()
-        {
-            return Rol;
+            get { return rol; }
+            set { rol = value; }
         }
     }
 }

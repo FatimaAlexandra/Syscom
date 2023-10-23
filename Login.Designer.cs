@@ -42,6 +42,7 @@
             btnLogin = new Guna.UI2.WinForms.Guna2Button();
             txtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             txtPass = new Guna.UI2.WinForms.Guna2TextBox();
+            lblRol = new Label();
             SuspendLayout();
             // 
             // lblEstadoConexion
@@ -149,11 +150,21 @@
             txtPass.Size = new Size(362, 45);
             txtPass.TabIndex = 15;
             // 
+            // lblRol
+            // 
+            lblRol.AutoSize = true;
+            lblRol.Location = new Point(326, 585);
+            lblRol.Name = "lblRol";
+            lblRol.Size = new Size(50, 20);
+            lblRol.TabIndex = 16;
+            lblRol.Text = "label1";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(597, 668);
+            Controls.Add(lblRol);
             Controls.Add(txtPass);
             Controls.Add(txtUsuario);
             Controls.Add(btnLogin);
@@ -179,5 +190,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private Guna.UI2.WinForms.Guna2TextBox txtUsuario;
         private Guna.UI2.WinForms.Guna2TextBox txtPass;
+        private Label lblRol;
     }
 }
