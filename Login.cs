@@ -4,10 +4,10 @@ using Syscom.View;
 
 namespace Syscom
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private ConexionBD conexionBD = new ConexionBD();
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -53,6 +53,15 @@ namespace Syscom
 
             // Mostrar el formulario de proveedores
             formProveedores.ShowDialog();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario dashboard
+            Dashboard menu = new Dashboard();
+
+            // Mostrar el formulario 
+            menu.ShowDialog();
         }
     }
 
