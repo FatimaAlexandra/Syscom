@@ -30,12 +30,13 @@
         {
             lblEstadoConexion = new Label();
             btnCrudClientes = new Button();
+            btnProveedores = new Button();
             SuspendLayout();
             // 
             // lblEstadoConexion
             // 
             lblEstadoConexion.AutoSize = true;
-            lblEstadoConexion.Location = new Point(390, 150);
+            lblEstadoConexion.Location = new Point(370, 141);
             lblEstadoConexion.Name = "lblEstadoConexion";
             lblEstadoConexion.Size = new Size(50, 20);
             lblEstadoConexion.TabIndex = 0;
@@ -44,19 +45,30 @@
             // 
             // btnCrudClientes
             // 
-            btnCrudClientes.Location = new Point(371, 228);
+            btnCrudClientes.Location = new Point(447, 227);
             btnCrudClientes.Name = "btnCrudClientes";
-            btnCrudClientes.Size = new Size(94, 29);
+            btnCrudClientes.Size = new Size(168, 29);
             btnCrudClientes.TabIndex = 9;
             btnCrudClientes.Text = "Crud Clientes";
             btnCrudClientes.UseVisualStyleBackColor = true;
             btnCrudClientes.Click += btnCrudClientes_Click;
+            // 
+            // btnProveedores
+            // 
+            btnProveedores.Location = new Point(183, 227);
+            btnProveedores.Name = "btnProveedores";
+            btnProveedores.Size = new Size(168, 29);
+            btnProveedores.TabIndex = 10;
+            btnProveedores.Text = "Crud Proveedores";
+            btnProveedores.UseVisualStyleBackColor = true;
+            btnProveedores.Click += btnProveedores_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnProveedores);
             Controls.Add(btnCrudClientes);
             Controls.Add(lblEstadoConexion);
             Name = "Form1";
@@ -70,5 +82,6 @@
 
         private Label lblEstadoConexion;
         private Button btnCrudClientes;
+        private Button btnProveedores;
     }
 }

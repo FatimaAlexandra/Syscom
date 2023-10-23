@@ -69,17 +69,14 @@ namespace Syscom.View
             dgvClientes.Columns.Add("Email", "Email");
             dgvClientes.Columns.Add("Telefono", "Teléfono");
             dgvClientes.Columns.Add("Empresa", "Empresa");
+            // Ocultar la columna "ID"
+            dgvClientes.Columns["Id"].Visible = false;
 
             foreach (ClientesModel cliente in listaClientes)
             {
                 dgvClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Email, cliente.Telefono, cliente.Empresa);
             }
         }
-
-
-
-
-
         private void FormularioClientes_Load(object sender, EventArgs e)
         {
 
