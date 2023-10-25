@@ -28,23 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            txtNombre = new TextBox();
-            txtEmail = new TextBox();
-            txtTelefono = new TextBox();
-            txtEmpresa = new TextBox();
             btnAgregarCliente = new Button();
             btnLimpiar = new Button();
-            dgvClientes = new DataGridView();
             groupBox1 = new GroupBox();
             btnEliminarCliente = new Button();
             btnModificarCliente = new Button();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
+            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            txtTelefono = new Guna.UI2.WinForms.Guna2TextBox();
+            txtEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
+            dgvClientes = new Guna.UI2.WinForms.Guna2DataGridView();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -87,34 +98,6 @@
             label4.TabIndex = 3;
             label4.Text = "Empresa";
             // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(246, 109);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(390, 27);
-            txtNombre.TabIndex = 4;
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(249, 177);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(390, 27);
-            txtEmail.TabIndex = 5;
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(248, 232);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(390, 27);
-            txtTelefono.TabIndex = 6;
-            // 
-            // txtEmpresa
-            // 
-            txtEmpresa.Location = new Point(249, 292);
-            txtEmpresa.Name = "txtEmpresa";
-            txtEmpresa.Size = new Size(390, 27);
-            txtEmpresa.TabIndex = 7;
-            // 
             // btnAgregarCliente
             // 
             btnAgregarCliente.BackColor = Color.FromArgb(192, 255, 192);
@@ -135,20 +118,7 @@
             btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
-            btnLimpiar.Click += this.btnLimpiar_Click;
-            // 
-            // dgvClientes
-            // 
-            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(112, 372);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.RowHeadersWidth = 51;
-            dgvClientes.RowTemplate.Height = 29;
-            dgvClientes.Size = new Size(769, 200);
-            dgvClientes.TabIndex = 10;
-            dgvClientes.SelectionChanged += this.dgvClientes_SelectionChanged;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // groupBox1
             // 
@@ -162,7 +132,7 @@
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Acciones";
-            groupBox1.Enter += this.groupBox1_Enter;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnEliminarCliente
             // 
@@ -196,18 +166,157 @@
             label5.TabIndex = 12;
             label5.Text = "FORMULARIO DE CLIENTES";
             // 
+            // txtNombre
+            // 
+            txtNombre.CustomizableEdges = customizableEdges1;
+            txtNombre.DefaultText = "";
+            txtNombre.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtNombre.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtNombre.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtNombre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtNombre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtNombre.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.ForeColor = Color.Gray;
+            txtNombre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtNombre.Location = new Point(248, 98);
+            txtNombre.Name = "txtNombre";
+            txtNombre.PasswordChar = '\0';
+            txtNombre.PlaceholderText = "";
+            txtNombre.SelectedText = "";
+            txtNombre.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtNombre.Size = new Size(391, 45);
+            txtNombre.TabIndex = 13;
+            // 
+            // txtEmail
+            // 
+            txtEmail.CustomizableEdges = customizableEdges3;
+            txtEmail.DefaultText = "";
+            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.ForeColor = Color.Gray;
+            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Location = new Point(248, 157);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PasswordChar = '\0';
+            txtEmail.PlaceholderText = "";
+            txtEmail.SelectedText = "";
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtEmail.Size = new Size(391, 45);
+            txtEmail.TabIndex = 14;
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.CustomizableEdges = customizableEdges5;
+            txtTelefono.DefaultText = "";
+            txtTelefono.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTelefono.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTelefono.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTelefono.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTelefono.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTelefono.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTelefono.ForeColor = Color.Gray;
+            txtTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTelefono.Location = new Point(246, 222);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.PasswordChar = '\0';
+            txtTelefono.PlaceholderText = "";
+            txtTelefono.SelectedText = "";
+            txtTelefono.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtTelefono.Size = new Size(391, 45);
+            txtTelefono.TabIndex = 15;
+            // 
+            // txtEmpresa
+            // 
+            txtEmpresa.CustomizableEdges = customizableEdges7;
+            txtEmpresa.DefaultText = "";
+            txtEmpresa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEmpresa.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEmpresa.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEmpresa.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEmpresa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmpresa.ForeColor = Color.Gray;
+            txtEmpresa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmpresa.Location = new Point(248, 287);
+            txtEmpresa.Name = "txtEmpresa";
+            txtEmpresa.PasswordChar = '\0';
+            txtEmpresa.PlaceholderText = "";
+            txtEmpresa.SelectedText = "";
+            txtEmpresa.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtEmpresa.Size = new Size(391, 45);
+            txtEmpresa.TabIndex = 16;
+            // 
+            // dgvClientes
+            // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvClientes.CausesValidation = false;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Navy;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Navy;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvClientes.ColumnHeadersHeight = 50;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvClientes.GridColor = Color.FromArgb(231, 229, 255);
+            dgvClientes.Location = new Point(79, 409);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.RowHeadersVisible = false;
+            dgvClientes.RowHeadersWidth = 51;
+            dgvClientes.RowTemplate.Height = 29;
+            dgvClientes.Size = new Size(769, 188);
+            dgvClientes.TabIndex = 17;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvClientes.ThemeStyle.BackColor = Color.White;
+            dgvClientes.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvClientes.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvClientes.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvClientes.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvClientes.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvClientes.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvClientes.ThemeStyle.HeaderStyle.Height = 50;
+            dgvClientes.ThemeStyle.ReadOnly = false;
+            dgvClientes.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvClientes.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvClientes.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvClientes.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvClientes.ThemeStyle.RowsStyle.Height = 29;
+            dgvClientes.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvClientes.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
+            dgvClientes.SelectionChanged += dgvClientes_SelectionChanged_1;
+            // 
             // FormularioClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1007, 712);
-            Controls.Add(label5);
-            Controls.Add(groupBox1);
             Controls.Add(dgvClientes);
             Controls.Add(txtEmpresa);
             Controls.Add(txtTelefono);
             Controls.Add(txtEmail);
             Controls.Add(txtNombre);
+            Controls.Add(label5);
+            Controls.Add(groupBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -215,8 +324,8 @@
             Name = "FormularioClientes";
             Text = "FormularioProveedores";
             Load += FormularioClientes_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,16 +336,16 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox txtNombre;
-        private TextBox txtEmail;
-        private TextBox txtTelefono;
-        private TextBox txtEmpresa;
         private Button btnAgregarCliente;
         private Button btnLimpiar;
-        private DataGridView dgvClientes;
         private GroupBox groupBox1;
         private Button btnModificarCliente;
         private Button btnEliminarCliente;
         private Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox txtNombre;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Guna.UI2.WinForms.Guna2TextBox txtTelefono;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmpresa;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvClientes;
     }
 }

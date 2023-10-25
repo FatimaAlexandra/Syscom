@@ -53,12 +53,13 @@ namespace Syscom.View
         private void CargarProveedoresEnDataGridView()
         {
             dgvProveedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProveedores.DefaultCellStyle.SelectionBackColor = Color.Blue;
-            dgvProveedores.DefaultCellStyle.SelectionForeColor = Color.White;
 
             // Limpia el DataGridView antes de cargar los datos.
             dgvProveedores.Rows.Clear();
             dgvProveedores.Columns.Clear(); // Limpia las columnas también
+
+            // Evitar que se agregue automáticamente una fila en blanco al final
+            dgvProveedores.AllowUserToAddRows = false;
 
             List<ProveedoresModel> listaProveedores = proveedoresController.ObtenerProveedores();
 
@@ -193,6 +194,29 @@ namespace Syscom.View
 
         private void label1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void dgvProveedores_SelectionChanged_1(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView.
+            if (dgvProveedores.SelectedRows.Count > 0)
+            {
+                // Obtener el proveedor seleccionado.
+                DataGridViewRow filaSeleccionada = dgvProveedores.SelectedRows[0];
+
+                // Obtener los datos del proveedor desde las celdas del DataGridView.
+                int proveedorId = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                string email = filaSeleccionada.Cells["Email"].Value.ToString();
+                string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
+                string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
+
+                // Cargar los datos del proveedor en los TextBox para edición.
+                txtNombre.Text = nombre;
+                txtEmail.Text = email;
+                txtTelefono.Text = telefono;
+                txtEmpresa.Text = empresa;
+            }
         }
     }
 }
