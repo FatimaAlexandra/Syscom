@@ -66,11 +66,10 @@ namespace Syscom
 
             if (loginController.AutenticarUsuario(usuario, pass, out string rol))
             {
-                Dashboard frmMenu = new Dashboard();    
+                Dashboard frmMenu = new Dashboard(usuario, rol);    
                 frmMenu.ShowDialog();
                 Limpiar();
-                // Cierra el formulario actual
-               // this.Hide();
+
             }
             else
             {
@@ -87,9 +86,7 @@ namespace Syscom
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            Dashboard frmMenu = new Dashboard();
-
-            frmMenu.ShowDialog();
+            
         }
     }
 
