@@ -14,7 +14,7 @@ namespace Syscom.Modelo
         private string servidor = "127.0.0.1";
         private string baseDeDatos = "Syscom";
         private string usuario = "root";
-        private string contraseña = "12345";
+        private string contraseña = "123456";
 
         public ConexionBD()
         {
