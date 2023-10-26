@@ -84,7 +84,12 @@ namespace Syscom
             }
         }
 
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            Dashboard frmMenu = new Dashboard();
 
+            frmMenu.ShowDialog();
+        }
     }
 
 
