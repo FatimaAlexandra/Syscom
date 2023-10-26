@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btnProveedor = new Guna.UI2.WinForms.Guna2Button();
             btnClientes = new Guna.UI2.WinForms.Guna2Button();
@@ -45,6 +45,8 @@
             btnLicitacion = new Guna.UI2.WinForms.Guna2Button();
             lblUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,16 +57,16 @@
             guna2Panel1.Controls.Add(btnClientes);
             guna2Panel1.Controls.Add(btnPropuesta);
             guna2Panel1.Controls.Add(btnLicitacion);
-            guna2Panel1.CustomizableEdges = customizableEdges19;
+            guna2Panel1.CustomizableEdges = customizableEdges9;
             guna2Panel1.Location = new Point(4, 4);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel1.Size = new Size(271, 516);
             guna2Panel1.TabIndex = 0;
             // 
             // btnProveedor
             // 
-            btnProveedor.CustomizableEdges = customizableEdges11;
+            btnProveedor.CustomizableEdges = customizableEdges1;
             btnProveedor.DisabledState.BorderColor = Color.DarkGray;
             btnProveedor.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProveedor.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -77,7 +79,7 @@
             btnProveedor.ImageSize = new Size(45, 45);
             btnProveedor.Location = new Point(23, 299);
             btnProveedor.Name = "btnProveedor";
-            btnProveedor.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnProveedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnProveedor.Size = new Size(225, 56);
             btnProveedor.TabIndex = 3;
             btnProveedor.Text = "Proveedores";
@@ -85,7 +87,7 @@
             // 
             // btnClientes
             // 
-            btnClientes.CustomizableEdges = customizableEdges13;
+            btnClientes.CustomizableEdges = customizableEdges3;
             btnClientes.DisabledState.BorderColor = Color.DarkGray;
             btnClientes.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -98,7 +100,7 @@
             btnClientes.ImageSize = new Size(45, 45);
             btnClientes.Location = new Point(23, 213);
             btnClientes.Name = "btnClientes";
-            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClientes.Size = new Size(225, 56);
             btnClientes.TabIndex = 2;
             btnClientes.Text = "Clientes";
@@ -106,7 +108,7 @@
             // 
             // btnPropuesta
             // 
-            btnPropuesta.CustomizableEdges = customizableEdges15;
+            btnPropuesta.CustomizableEdges = customizableEdges5;
             btnPropuesta.DisabledState.BorderColor = Color.DarkGray;
             btnPropuesta.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPropuesta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -118,14 +120,14 @@
             btnPropuesta.ImageSize = new Size(45, 45);
             btnPropuesta.Location = new Point(23, 120);
             btnPropuesta.Name = "btnPropuesta";
-            btnPropuesta.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnPropuesta.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnPropuesta.Size = new Size(225, 56);
             btnPropuesta.TabIndex = 1;
             btnPropuesta.Text = "Propuestas económicas";
             // 
             // btnLicitacion
             // 
-            btnLicitacion.CustomizableEdges = customizableEdges17;
+            btnLicitacion.CustomizableEdges = customizableEdges7;
             btnLicitacion.DisabledState.BorderColor = Color.DarkGray;
             btnLicitacion.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLicitacion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -138,7 +140,7 @@
             btnLicitacion.ImageSize = new Size(40, 40);
             btnLicitacion.Location = new Point(23, 36);
             btnLicitacion.Name = "btnLicitacion";
-            btnLicitacion.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnLicitacion.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnLicitacion.Size = new Size(225, 56);
             btnLicitacion.TabIndex = 0;
             btnLicitacion.Text = "Licitaciones";
@@ -147,7 +149,7 @@
             // lblUsuario
             // 
             lblUsuario.BackColor = Color.Transparent;
-            lblUsuario.Location = new Point(291, 12);
+            lblUsuario.Location = new Point(589, 87);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(53, 22);
             lblUsuario.TabIndex = 2;
@@ -156,18 +158,39 @@
             // lblRol
             // 
             lblRol.BackColor = Color.Transparent;
-            lblRol.Location = new Point(291, 52);
+            lblRol.Location = new Point(833, 491);
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(25, 22);
             lblRol.TabIndex = 4;
             lblRol.Text = "Rol";
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Cooper Black", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel1.Location = new Point(439, 35);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(348, 33);
+            guna2HtmlLabel1.TabIndex = 6;
+            guna2HtmlLabel1.Text = "BIENVENIDO A SYSCOM";
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Location = new Point(619, 491);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(208, 22);
+            guna2HtmlLabel2.TabIndex = 7;
+            guna2HtmlLabel2.Text = "Usted ha iniciado sesión como:";
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 525);
+            Controls.Add(guna2HtmlLabel2);
             Controls.Add(lblRol);
+            Controls.Add(guna2HtmlLabel1);
             Controls.Add(lblUsuario);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -189,5 +212,7 @@
         private Guna.UI2.WinForms.Guna2Button btnLicitacion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUsuario;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRol;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

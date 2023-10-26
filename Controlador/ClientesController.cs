@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using Syscom.Modelo;
 using System;
 using System.Collections.Generic;
@@ -94,5 +95,27 @@ namespace Syscom.Controlador
             }
             conexionBD.CerrarConexion();
         }
+
+        public List<ClientesModel> ObtenerClientesConNombres()
+        {
+            MySqlConnection conexion = conexionBD.ObtenerConexion();
+            List<ClientesModel> listaClientes = new List<ClientesModel>();
+
+            using (MySqlCommand comando = new MySqlCommand("SELECT id, empresa FROM Clientes", conexion))
+            {
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32("id");
+                        string empresa = reader.GetString("empresa");
+                        listaClientes.Add(new ClientesModel { Id = id, Empresa = empresa });
+                    }
+                }
+            }
+
+            return listaClientes;
+        }
+
     }
 }

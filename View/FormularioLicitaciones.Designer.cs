@@ -61,7 +61,7 @@
             label3 = new Label();
             label2 = new Label();
             btnAgregarProductos = new Guna.UI2.WinForms.Guna2Button();
-            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            cmbIdCliente = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -130,7 +130,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(guna2TextBox3);
+            guna2Panel1.Controls.Add(cmbIdCliente);
             guna2Panel1.Controls.Add(guna2DateTimePicker2);
             guna2Panel1.Controls.Add(guna2DateTimePicker1);
             guna2Panel1.Controls.Add(guna2TextBox2);
@@ -222,7 +222,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(560, 258);
+            label1.Location = new Point(560, 228);
             label1.Name = "label1";
             label1.Size = new Size(90, 24);
             label1.TabIndex = 21;
@@ -302,25 +302,23 @@
             btnAgregarProductos.Text = "Agregar producos";
             btnAgregarProductos.Click += btnAgregarProductos_Click;
             // 
-            // guna2TextBox3
+            // cmbIdCliente
             // 
-            guna2TextBox3.CustomizableEdges = customizableEdges1;
-            guna2TextBox3.DefaultText = "";
-            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Location = new Point(669, 246);
-            guna2TextBox3.Name = "guna2TextBox3";
-            guna2TextBox3.PasswordChar = '\0';
-            guna2TextBox3.PlaceholderText = "";
-            guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox3.Size = new Size(118, 45);
-            guna2TextBox3.TabIndex = 30;
+            cmbIdCliente.BackColor = Color.Transparent;
+            cmbIdCliente.CustomizableEdges = customizableEdges1;
+            cmbIdCliente.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbIdCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIdCliente.FocusedColor = Color.FromArgb(94, 148, 255);
+            cmbIdCliente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cmbIdCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbIdCliente.ForeColor = Color.FromArgb(68, 88, 112);
+            cmbIdCliente.ItemHeight = 30;
+            cmbIdCliente.Location = new Point(560, 255);
+            cmbIdCliente.Name = "cmbIdCliente";
+            cmbIdCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cmbIdCliente.Size = new Size(283, 36);
+            cmbIdCliente.TabIndex = 30;
+            cmbIdCliente.SelectedIndexChanged += cmbIdCliente_SelectedIndexChanged;
             // 
             // FormularioLicitaciones
             // 
@@ -333,6 +331,7 @@
             Controls.Add(label5);
             Name = "FormularioLicitaciones";
             Text = "FormularioLicitaciones";
+            Load += FormularioLicitaciones_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
@@ -356,6 +355,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2Button btnAgregarProductos;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbIdCliente;
     }
 }
