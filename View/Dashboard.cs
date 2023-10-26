@@ -21,26 +21,26 @@ namespace Syscom.View
             InitializeComponent();
             this.usuario = usuario;
             this.rolUsuario = rolUsuario;
-            
+
             MostrarBotonesSegunRol();
             lblUsuario.Text = usuario + "\n";
             lblRol.Text = rolUsuario + "\n";
 
         }
-
+        //ocultar botones 
         private void MostrarBotonesSegunRol()
         {
             if (rolUsuario == "cliente")
             {
                 btnClientes.Visible = false;
                 btnProveedor.Visible = false;
-               
+
             }
             if (rolUsuario == "proveedor")
             {
                 btnProveedor.Visible = false;
                 btnClientes.Visible = false;
-                btnLicitacion.Visible = false;  
+                btnLicitacion.Visible = false;
             }
 
         }
