@@ -185,6 +185,7 @@ namespace Syscom.View
                 txtEmail.Enabled = false;
                 txtTelefono.Enabled = false;
                 txtEmpresa.Enabled = false;
+                cmbUsuarios.SelectedIndex = 0;
 
                 // Limpiar los TextBox.
                 Limpiar();
