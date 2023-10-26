@@ -100,6 +100,7 @@ namespace Syscom.View
         }
         private void FormularioClientes_Load(object sender, EventArgs e)
         {
+            CargarClientesEnDataGridView();
             CargarUsuariosEnComboBox();
         }
         private void CargarUsuariosEnComboBox()
@@ -132,33 +133,28 @@ namespace Syscom.View
 
         private void dgvClientes_SelectionChanged(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView.
-            if (dgvClientes.SelectedRows.Count > 0)
+            if (dgvClientes.SelectedRows.Count >= 0)
             {
-                // Obtener el cliente seleccionado.
                 DataGridViewRow filaSeleccionada = dgvClientes.SelectedRows[0];
-
-                // Obtener los datos del cliente desde las celdas del DataGridView.
                 int clienteId = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
                 string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
-                int id_usuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
+                int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
 
-                // Cargar los datos del cliente en los TextBox para edición.
                 txtNombre.Text = nombre;
                 txtEmail.Text = email;
                 txtTelefono.Text = telefono;
                 txtEmpresa.Text = empresa;
-                cmbUsuarios.SelectedIndex = id_usuario;
 
-                // Habilitar los TextBox para edición.
+                // Establecer la selección en el ComboBox según el ID del usuario.
+                cmbUsuarios.SelectedValue = idUsuario;
+
                 txtNombre.Enabled = true;
                 txtEmail.Enabled = true;
                 txtTelefono.Enabled = true;
                 txtEmpresa.Enabled = true;
-                cmbUsuarios.Enabled = true;
             }
         }
 
@@ -229,30 +225,24 @@ namespace Syscom.View
 
         private void dgvClientes_SelectionChanged_1(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView.
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                // Obtener el cliente seleccionado.
                 DataGridViewRow filaSeleccionada = dgvClientes.SelectedRows[0];
-
-                // Obtener los datos del cliente desde las celdas del DataGridView.
                 int clienteId = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
                 string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
-                int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value); // Obtener idUsuario
+                int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
 
-                // Cargar los datos del cliente en los TextBox para edición.
                 txtNombre.Text = nombre;
                 txtEmail.Text = email;
                 txtTelefono.Text = telefono;
                 txtEmpresa.Text = empresa;
 
-                // Establecer el valor del idUsuario en el ComboBox
+                // Seleccionar el usuario correspondiente en el ComboBox por su ID
                 cmbUsuarios.SelectedValue = idUsuario;
 
-                // Habilitar los TextBox para edición.
                 txtNombre.Enabled = true;
                 txtEmail.Enabled = true;
                 txtTelefono.Enabled = true;
@@ -268,6 +258,11 @@ namespace Syscom.View
         private void dgvClientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvClientes.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+        }
+
+        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

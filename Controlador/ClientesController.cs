@@ -137,12 +137,16 @@ namespace Syscom.Controlador
                 comando.Parameters.AddWithValue("@email", cliente.Email);
                 comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
                 comando.Parameters.AddWithValue("@empresa", cliente.Empresa);
-                comando.Parameters.AddWithValue("@id_usuario", cliente.IdUsuario);
+
+                // Ajusta el ID sumándole 1 antes de guardarlo en la base de datos.
+                comando.Parameters.AddWithValue("@id_usuario", cliente.IdUsuario + 1);
+
                 comando.Parameters.AddWithValue("@id", cliente.Id);
                 comando.ExecuteNonQuery();
             }
             conexionBD.CerrarConexion();
         }
+
 
 
         //método para eliminar clientes 
