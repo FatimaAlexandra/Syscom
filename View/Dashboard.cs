@@ -39,5 +39,12 @@ namespace Syscom.View
             // Mostrar el formulario de proveedores
             formProveedores.ShowDialog();
         }
+
+        private void btnLicitacion_Click(object sender, EventArgs e)
+        {
+            FormularioLicitaciones licitaciones = new FormularioLicitaciones();
+
+            licitaciones.ShowDialog();
+        }
     }
 }

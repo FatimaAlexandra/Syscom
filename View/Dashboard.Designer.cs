@@ -49,7 +49,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.FromArgb(192, 255, 192);
+            guna2Panel1.BackColor = Color.PaleTurquoise;
             guna2Panel1.Controls.Add(btnProveedor);
             guna2Panel1.Controls.Add(btnClientes);
             guna2Panel1.Controls.Add(btnPropuesta);
@@ -68,8 +68,12 @@
             btnProveedor.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProveedor.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnProveedor.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnProveedor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnProveedor.ForeColor = Color.White;
+            btnProveedor.FillColor = Color.Teal;
+            btnProveedor.Font = new Font("Consolas", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnProveedor.ForeColor = Color.Black;
+            btnProveedor.Image = Properties.Resources.proveedor;
+            btnProveedor.ImageAlign = HorizontalAlignment.Left;
+            btnProveedor.ImageSize = new Size(45, 45);
             btnProveedor.Location = new Point(23, 299);
             btnProveedor.Name = "btnProveedor";
             btnProveedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -85,8 +89,12 @@
             btnClientes.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnClientes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnClientes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnClientes.ForeColor = Color.White;
+            btnClientes.FillColor = Color.FromArgb(0, 192, 0);
+            btnClientes.Font = new Font("Consolas", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.Black;
+            btnClientes.Image = Properties.Resources.cliente;
+            btnClientes.ImageAlign = HorizontalAlignment.Left;
+            btnClientes.ImageSize = new Size(45, 45);
             btnClientes.Location = new Point(23, 213);
             btnClientes.Name = "btnClientes";
             btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -102,8 +110,11 @@
             btnPropuesta.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPropuesta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnPropuesta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnPropuesta.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnPropuesta.ForeColor = Color.White;
+            btnPropuesta.Font = new Font("Consolas", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPropuesta.ForeColor = Color.Black;
+            btnPropuesta.Image = Properties.Resources.propuesta;
+            btnPropuesta.ImageAlign = HorizontalAlignment.Left;
+            btnPropuesta.ImageSize = new Size(45, 45);
             btnPropuesta.Location = new Point(23, 120);
             btnPropuesta.Name = "btnPropuesta";
             btnPropuesta.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -118,14 +129,19 @@
             btnLicitacion.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLicitacion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnLicitacion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLicitacion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLicitacion.ForeColor = Color.White;
-            btnLicitacion.Location = new Point(23, 24);
+            btnLicitacion.FillColor = Color.FromArgb(0, 192, 192);
+            btnLicitacion.Font = new Font("Consolas", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLicitacion.ForeColor = Color.Black;
+            btnLicitacion.Image = Properties.Resources.licitacion;
+            btnLicitacion.ImageAlign = HorizontalAlignment.Left;
+            btnLicitacion.ImageSize = new Size(40, 40);
+            btnLicitacion.Location = new Point(23, 36);
             btnLicitacion.Name = "btnLicitacion";
             btnLicitacion.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnLicitacion.Size = new Size(225, 56);
             btnLicitacion.TabIndex = 0;
             btnLicitacion.Text = "Licitaciones";
+            btnLicitacion.Click += btnLicitacion_Click;
             // 
             // guna2HtmlLabel1
             // 

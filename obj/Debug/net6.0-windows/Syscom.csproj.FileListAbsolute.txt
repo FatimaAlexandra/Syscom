@@ -39,3 +39,6 @@ C:\Users\lenovo\Documents\UES\Syscom\bin\Debug\net6.0-windows\System.Management.
 C:\Users\lenovo\Documents\UES\Syscom\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.Dashboard.resources
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.Login.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioLicitaciones.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioProductos.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.Properties.Resources.resources
