@@ -1,15 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Syscom.Modelo
 {
-    internal class ConexionBD
+    internal class ConexionBD : IDisposable
     {
-
         private MySqlConnection conexion;
         private string servidor = "127.0.0.1";
         private string baseDeDatos = "Syscom";
@@ -45,6 +40,11 @@ namespace Syscom.Modelo
             {
                 conexion.Close();
             }
+        }
+
+        public void Dispose()
+        {
+            CerrarConexion();
         }
     }
 }

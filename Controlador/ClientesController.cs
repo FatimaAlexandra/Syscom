@@ -20,49 +20,110 @@ namespace Syscom.Controlador
 
         public void InsertarCliente(ClientesModel cliente)
         {
-            MySqlConnection conexion = conexionBD.ObtenerConexion();
-            using (MySqlCommand comando = new MySqlCommand())
+            using (ConexionBD conexionBD = new ConexionBD())
             {
-                comando.Connection = conexion;
-                comando.CommandText = "INSERT INTO Clientes (nombre, email, telefono, empresa) VALUES (@nombre, @email, @telefono, @empresa)";
-                comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
-                comando.Parameters.AddWithValue("@email", cliente.Email);
-                comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
-                comando.Parameters.AddWithValue("@empresa", cliente.Empresa);
-                comando.ExecuteNonQuery();
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+                try
+                {
+                    // No es necesario abrir la conexión manualmente, ya que se hace automáticamente dentro del using
+
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario) VALUES (@nombre, @email, @telefono, @empresa, @idUsuario)";
+                        comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                        comando.Parameters.AddWithValue("@email", cliente.Email);
+                        comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
+                        comando.Parameters.AddWithValue("@empresa", cliente.Empresa);
+                        comando.Parameters.AddWithValue("@idUsuario", cliente.IdUsuario);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones, muestra un mensaje de error o registra la excepción
+                    MessageBox.Show("Error al insertar el cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                // La conexión se cerrará automáticamente al salir del bloque 'using'
             }
-            conexionBD.CerrarConexion();
         }
+
         public List<ClientesModel> ObtenerClientes()
         {
             List<ClientesModel> listaClientes = new List<ClientesModel>();
+
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+                try
+                {
+                    // No es necesario abrir la conexión manualmente, ya que se hace automáticamente dentro del using
+
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT id, nombre, email, telefono, empresa, id_usuario FROM Clientes";
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ClientesModel cliente = new ClientesModel
+                                {
+                                    Id = reader.GetInt32("id"),
+                                    Nombre = reader.GetString("nombre"),
+                                    Email = reader.GetString("email"),
+                                    Telefono = reader.GetString("telefono"),
+                                    Empresa = reader.GetString("empresa"),
+                                    IdUsuario = reader.GetInt32("id_usuario")
+                                };
+                                listaClientes.Add(cliente);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones, muestra un mensaje de error o registra la excepción
+                    MessageBox.Show("Error al obtener los clientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                // La conexión se cerrará automáticamente al salir del bloque 'using'
+            }
+
+            return listaClientes;
+        }
+
+
+
+        //Llenar ComboBox con usuarios de la base de datos
+        public List<UsuariosModel> ObtenerUsuarios()
+        {
+            List<UsuariosModel> listaUsuarios = new List<UsuariosModel>();
 
             MySqlConnection conexion = conexionBD.ObtenerConexion();
             using (MySqlCommand comando = new MySqlCommand())
             {
                 comando.Connection = conexion;
-                comando.CommandText = "SELECT id, nombre, email, telefono, empresa FROM Clientes";
+                comando.CommandText = "SELECT id, usuario FROM Usuarios"; // Ajusta la consulta según tu estructura de base de datos
 
                 using (MySqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        ClientesModel cliente = new ClientesModel
+                        UsuariosModel usuario = new UsuariosModel
                         {
                             Id = reader.GetInt32("id"),
-                            Nombre = reader.GetString("nombre"),
-                            Email = reader.GetString("email"),
-                            Telefono = reader.GetString("telefono"),
-                            Empresa = reader.GetString("empresa")
+                            Usuario = reader.GetString("usuario")
                         };
-                        listaClientes.Add(cliente);
+                        listaUsuarios.Add(usuario);
                     }
                 }
             }
             conexionBD.CerrarConexion();
 
-            return listaClientes;
+            return listaUsuarios;
         }
+
 
         //método para modificar la información de los clientes
         public void ActualizarCliente(ClientesModel cliente)
@@ -71,11 +132,12 @@ namespace Syscom.Controlador
             using (MySqlCommand comando = new MySqlCommand())
             {
                 comando.Connection = conexion;
-                comando.CommandText = "UPDATE Clientes SET nombre = @nombre, email = @email, telefono = @telefono, empresa = @empresa WHERE id = @id";
+                comando.CommandText = "UPDATE Clientes SET nombre = @nombre, email = @email, telefono = @telefono, empresa = @empresa, id_usuario = @id_usuario WHERE id = @id";
                 comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
                 comando.Parameters.AddWithValue("@email", cliente.Email);
                 comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
                 comando.Parameters.AddWithValue("@empresa", cliente.Empresa);
+                comando.Parameters.AddWithValue("@id_usuario", cliente.IdUsuario);
                 comando.Parameters.AddWithValue("@id", cliente.Id);
                 comando.ExecuteNonQuery();
             }

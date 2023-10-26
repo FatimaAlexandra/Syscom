@@ -8,18 +8,19 @@ USE Syscom;
 CREATE TABLE Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(50),
-    pass VARCHAR(255), -- Recuerda almacenar contraseñas de forma segura (con hash y sal)
+    pass VARCHAR(255), 
     email VARCHAR(100),
-    rol VARCHAR(50) -- Nuevo campo para el rol de usuario
+    rol VARCHAR(50) 
 );
 
--- Crear la tabla de Clientes
 CREATE TABLE Clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
     email VARCHAR(100),
-    telefono VARCHAR(20),    
-    empresa VARCHAR(100)
+    telefono VARCHAR(20),
+    empresa VARCHAR(100),
+    id_usuario INT, 
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id) -- Clave foránea para la vinculación con Usuarios
 );
 
 -- Crear la tabla de Proveedores
@@ -28,7 +29,9 @@ CREATE TABLE Proveedores (
     nombre VARCHAR(100),
     email VARCHAR(100),
     telefono VARCHAR(20),
-    empresa VARCHAR(100)
+    empresa VARCHAR(100),
+    id_usuario INT, 
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id) -- Clave foránea para la vinculación con Usuarios
 );
 
 -- Crear la tabla de Licitaciones
@@ -39,8 +42,8 @@ CREATE TABLE Licitaciones (
     descripcion TEXT,
     fecha_inicio DATE,
     fecha_fin DATE,
-	ganador BOOLEAN,
-    estado VARCHAR(50), 
+	ganador BOOLEAN null,
+    estado VARCHAR(50) null, 
     FOREIGN KEY (id_cliente) REFERENCES Clientes(id)
 );
 
@@ -65,4 +68,10 @@ CREATE TABLE Productos (
     FOREIGN KEY (id_licitacion) REFERENCES Licitaciones(id)
 );
 select * from Clientes;
-delete from Clientes where id=2;
+-- Insertar usuarios
+INSERT INTO Usuarios (usuario, pass, email, rol) VALUES
+    ('Diego', '123', 'proveedor@ejemplo.com', 'cliente'),
+    ('Fatima', '123', 'proveedor@ejemplo.com', 'proveedor'),
+    ('Admin', '123', 'admin@ejemplo.com', 'administrador');
+ 
+select * from Usuarios;
