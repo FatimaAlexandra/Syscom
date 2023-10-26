@@ -13,7 +13,7 @@ namespace Syscom
         public Login()
         {
             InitializeComponent();
-            loginController = new LoginController(conexion);
+            loginController = new LoginController();
         }
 
         private void lblEstadoConexion_Click(object sender, EventArgs e)
@@ -62,27 +62,28 @@ namespace Syscom
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;
-            string contrasena = txtPass.Text;
+            string pass = txtPass.Text;
 
-            // Llama al método de inicio de sesión del controlador
-            UsuariosModel usuarioModel = loginController.IniciarSesion(usuario, contrasena);
-
-            if (usuarioModel != null)
+            if (loginController.AutenticarUsuario(usuario, pass, out string rol))
             {
-                // Inicio de sesión exitoso
-                MessageBox.Show("Inicio de sesión exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Muestra el rol del usuario en el label
-                lblRol.Text = "Usted ha iniciado sesión como: " + usuarioModel.Rol;
-
-                // Aquí puedes redirigir al Dashboard o realizar otras acciones según el rol
+                Dashboard frmMenu = new Dashboard();    
+                frmMenu.ShowDialog();
+                Limpiar();
+                // Cierra el formulario actual
+               // this.Hide();
             }
             else
             {
-                // Inicio de sesión fallido
-                MessageBox.Show("Inicio de sesión fallido. Compruebe su usuario y contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.");
+                Limpiar();
             }
         }
+        private void Limpiar()
+        {
+            txtUsuario.Text = string.Empty;
+            txtPass.Text = string.Empty;
+        }
+
 
         private void btnMenu_Click(object sender, EventArgs e)
         {

@@ -10,54 +10,45 @@ namespace Syscom.Controlador
 {
     internal class LoginController
     {
-        private ConexionBD conexionBD;
+        private ConexionBD conexion;
 
-        public LoginController(MySqlConnection conexion)
+        public LoginController()
         {
-            conexionBD = new ConexionBD();
+            conexion = new ConexionBD();
         }
 
-        public UsuariosModel IniciarSesion(string usuario, string contrasena)
+        public bool AutenticarUsuario(string usuario, string pass, out string rol)
         {
-            MySqlConnection conexion = conexionBD.ObtenerConexion();
-
+            rol = null;
             try
             {
-                conexion.Open();
-
-                // Consulta para verificar si el usuario y la contraseña son válidos.
-                string consulta = "SELECT * FROM Usuarios WHERE usuario = @usuario AND pass = @contrasena";
-                MySqlCommand comando = new MySqlCommand(consulta, conexion);
-                comando.Parameters.AddWithValue("@usuario", usuario);
-                comando.Parameters.AddWithValue("@contrasena", contrasena);
-
-                using (MySqlDataReader reader = comando.ExecuteReader())
+                using (MySqlConnection conn = conexion.ObtenerConexion())
                 {
-                    if (reader.Read())
+                    string query = "SELECT rol FROM Usuarios WHERE usuario = @usuario AND pass = @pass";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        UsuariosModel usuarioModel = new UsuariosModel
-                        {
-                            Id = reader.GetInt32("id"),
-                            Usuario = reader.GetString("usuario"),
-                            Pass = reader.GetString("pass"),
-                            Email = reader.GetString("email"),
-                            Rol = reader.GetString("rol")
-                        };
+                        cmd.Parameters.AddWithValue("@usuario", usuario);
+                        cmd.Parameters.AddWithValue("@pass", pass);
 
-                        return usuarioModel;
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                rol = reader.GetString("rol");
+                                return true;
+                            }
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error en el inicio de sesión: " + ex.Message);
-            }
-            finally
-            {
-                conexion.Close();
+                throw new Exception("Error al autenticar el usuario: " + ex.Message);
             }
 
-            return null; // En caso de no encontrar un usuario válido.
+            return false;
         }
+
+
     }
 }
