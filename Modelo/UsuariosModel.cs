@@ -9,6 +9,7 @@ namespace Syscom.Modelo
 {
     internal class UsuariosModel
     {
+
         private int id;
         private string usuario;
         private string pass;
@@ -44,5 +45,8 @@ namespace Syscom.Modelo
             get { return rol; }
             set { rol = value; }
         }
+
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syscom.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,37 @@ namespace Syscom.View
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+
+        private string rolUsuario;
+        private string usuario;
+        public Dashboard(string usuario, string rolUsuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+            this.rolUsuario = rolUsuario;
+            
+            MostrarBotonesSegunRol();
+            lblUsuario.Text = usuario + "\n";
+            lblRol.Text = rolUsuario + "\n";
+
         }
 
+        private void MostrarBotonesSegunRol()
+        {
+            if (rolUsuario == "cliente")
+            {
+                btnClientes.Visible = false;
+                btnProveedor.Visible = false;
+               
+            }
+            if (rolUsuario == "proveedor")
+            {
+                btnProveedor.Visible = false;
+                btnClientes.Visible = false;
+                btnLicitacion.Visible = false;  
+            }
+
+        }
         private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
         {
 
@@ -45,6 +72,12 @@ namespace Syscom.View
             FormularioLicitaciones licitaciones = new FormularioLicitaciones();
 
             licitaciones.ShowDialog();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+
         }
     }
 }
