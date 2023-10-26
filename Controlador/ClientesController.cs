@@ -132,11 +132,12 @@ namespace Syscom.Controlador
             using (MySqlCommand comando = new MySqlCommand())
             {
                 comando.Connection = conexion;
-                comando.CommandText = "UPDATE Clientes SET nombre = @nombre, email = @email, telefono = @telefono, empresa = @empresa WHERE id = @id";
+                comando.CommandText = "UPDATE Clientes SET nombre = @nombre, email = @email, telefono = @telefono, empresa = @empresa, id_usuario = @id_usuario WHERE id = @id";
                 comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
                 comando.Parameters.AddWithValue("@email", cliente.Email);
                 comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
                 comando.Parameters.AddWithValue("@empresa", cliente.Empresa);
+                comando.Parameters.AddWithValue("@id_usuario", cliente.IdUsuario);
                 comando.Parameters.AddWithValue("@id", cliente.Id);
                 comando.ExecuteNonQuery();
             }

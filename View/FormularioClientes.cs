@@ -144,18 +144,21 @@ namespace Syscom.View
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
                 string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
+                int id_usuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
 
                 // Cargar los datos del cliente en los TextBox para edición.
                 txtNombre.Text = nombre;
                 txtEmail.Text = email;
                 txtTelefono.Text = telefono;
                 txtEmpresa.Text = empresa;
+                cmbUsuarios.SelectedIndex = id_usuario;
 
                 // Habilitar los TextBox para edición.
                 txtNombre.Enabled = true;
                 txtEmail.Enabled = true;
                 txtTelefono.Enabled = true;
                 txtEmpresa.Enabled = true;
+                cmbUsuarios.Enabled = true;
             }
         }
 
@@ -174,7 +177,8 @@ namespace Syscom.View
                     Nombre = txtNombre.Text,
                     Email = txtEmail.Text,
                     Telefono = txtTelefono.Text,
-                    Empresa = txtEmpresa.Text
+                    Empresa = txtEmpresa.Text,
+                    IdUsuario = cmbUsuarios.SelectedIndex
                 };
 
                 // Llamar al método del controlador para actualizar el cliente.
@@ -237,12 +241,16 @@ namespace Syscom.View
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
                 string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
+                int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value); // Obtener idUsuario
 
                 // Cargar los datos del cliente en los TextBox para edición.
                 txtNombre.Text = nombre;
                 txtEmail.Text = email;
                 txtTelefono.Text = telefono;
                 txtEmpresa.Text = empresa;
+
+                // Establecer el valor del idUsuario en el ComboBox
+                cmbUsuarios.SelectedValue = idUsuario;
 
                 // Habilitar los TextBox para edición.
                 txtNombre.Enabled = true;
