@@ -19,6 +19,7 @@ namespace Syscom.View
         public FormularioUsuarios()
         {
             InitializeComponent();
+            CargarUsuariosEnDataGridView();
         }
 
         private void FormularioUsuarios_Load(object sender, EventArgs e)

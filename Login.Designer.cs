@@ -34,6 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblEstadoConexion = new Label();
             btnCrudClientes = new Button();
             btnProveedores = new Button();
@@ -44,6 +45,7 @@
             txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             lblRol = new Label();
             btnMenu = new Button();
+            guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             SuspendLayout();
             // 
             // lblEstadoConexion
@@ -154,11 +156,12 @@
             // lblRol
             // 
             lblRol.AutoSize = true;
-            lblRol.Location = new Point(326, 585);
+            lblRol.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRol.Location = new Point(53, 21);
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(50, 20);
+            lblRol.Size = new Size(519, 26);
             lblRol.TabIndex = 16;
-            lblRol.Text = "label1";
+            lblRol.Text = "BIENVENIDOS AL SISTEMA DE COMPRAS ";
             // 
             // btnMenu
             // 
@@ -170,11 +173,29 @@
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
+            // guna2ImageButton1
+            // 
+            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.Image = Properties.Resources.ojo;
+            guna2ImageButton1.ImageOffset = new Point(0, 0);
+            guna2ImageButton1.ImageRotate = 0F;
+            guna2ImageButton1.ImageSize = new Size(25, 25);
+            guna2ImageButton1.Location = new Point(485, 284);
+            guna2ImageButton1.Name = "guna2ImageButton1";
+            guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            guna2ImageButton1.Size = new Size(47, 47);
+            guna2ImageButton1.TabIndex = 18;
+            guna2ImageButton1.Click += guna2ImageButton1_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 255, 255);
             ClientSize = new Size(597, 668);
+            Controls.Add(guna2ImageButton1);
             Controls.Add(btnMenu);
             Controls.Add(lblRol);
             Controls.Add(txtPass);
@@ -204,5 +225,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPass;
         private Label lblRol;
         private Button btnMenu;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
     }
 }

@@ -34,6 +34,7 @@ namespace Syscom.View
             {
                 btnClientes.Visible = false;
                 btnProveedor.Visible = false;
+                btnUsuarios.Visible = false;
 
             }
             if (rolUsuario == "proveedor")
@@ -41,6 +42,7 @@ namespace Syscom.View
                 btnProveedor.Visible = false;
                 btnClientes.Visible = false;
                 btnLicitacion.Visible = false;
+                btnUsuarios.Visible = false;
             }
 
         }

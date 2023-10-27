@@ -33,6 +33,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -45,11 +47,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label5 = new Label();
             dgvProductos = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            cmbIdCliente = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,7 +64,7 @@
             label3 = new Label();
             label2 = new Label();
             btnAgregarProductos = new Guna.UI2.WinForms.Guna2Button();
-            cmbIdCliente = new Guna.UI2.WinForms.Guna2ComboBox();
+            btnLanzarLicitacion = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -147,6 +150,24 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Panel1.Size = new Size(870, 314);
             guna2Panel1.TabIndex = 20;
+            // 
+            // cmbIdCliente
+            // 
+            cmbIdCliente.BackColor = Color.Transparent;
+            cmbIdCliente.CustomizableEdges = customizableEdges1;
+            cmbIdCliente.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbIdCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIdCliente.FocusedColor = Color.FromArgb(94, 148, 255);
+            cmbIdCliente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cmbIdCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbIdCliente.ForeColor = Color.FromArgb(68, 88, 112);
+            cmbIdCliente.ItemHeight = 30;
+            cmbIdCliente.Location = new Point(560, 255);
+            cmbIdCliente.Name = "cmbIdCliente";
+            cmbIdCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cmbIdCliente.Size = new Size(283, 36);
+            cmbIdCliente.TabIndex = 30;
+            cmbIdCliente.SelectedIndexChanged += cmbIdCliente_SelectedIndexChanged;
             // 
             // guna2DateTimePicker2
             // 
@@ -302,29 +323,29 @@
             btnAgregarProductos.Text = "Agregar producos";
             btnAgregarProductos.Click += btnAgregarProductos_Click;
             // 
-            // cmbIdCliente
+            // btnLanzarLicitacion
             // 
-            cmbIdCliente.BackColor = Color.Transparent;
-            cmbIdCliente.CustomizableEdges = customizableEdges1;
-            cmbIdCliente.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbIdCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbIdCliente.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmbIdCliente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmbIdCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbIdCliente.ForeColor = Color.FromArgb(68, 88, 112);
-            cmbIdCliente.ItemHeight = 30;
-            cmbIdCliente.Location = new Point(560, 255);
-            cmbIdCliente.Name = "cmbIdCliente";
-            cmbIdCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cmbIdCliente.Size = new Size(283, 36);
-            cmbIdCliente.TabIndex = 30;
-            cmbIdCliente.SelectedIndexChanged += cmbIdCliente_SelectedIndexChanged;
+            btnLanzarLicitacion.CustomizableEdges = customizableEdges17;
+            btnLanzarLicitacion.DisabledState.BorderColor = Color.DarkGray;
+            btnLanzarLicitacion.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLanzarLicitacion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLanzarLicitacion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLanzarLicitacion.FillColor = Color.MediumBlue;
+            btnLanzarLicitacion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLanzarLicitacion.ForeColor = Color.White;
+            btnLanzarLicitacion.Location = new Point(688, 677);
+            btnLanzarLicitacion.Name = "btnLanzarLicitacion";
+            btnLanzarLicitacion.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnLanzarLicitacion.Size = new Size(158, 39);
+            btnLanzarLicitacion.TabIndex = 31;
+            btnLanzarLicitacion.Text = "Lanzar licitación";
             // 
             // FormularioLicitaciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(955, 728);
+            Controls.Add(btnLanzarLicitacion);
             Controls.Add(btnAgregarProductos);
             Controls.Add(guna2Panel1);
             Controls.Add(dgvProductos);
@@ -356,5 +377,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2Button btnAgregarProductos;
         private Guna.UI2.WinForms.Guna2ComboBox cmbIdCliente;
+        private Guna.UI2.WinForms.Guna2Button btnLanzarLicitacion;
     }
 }
