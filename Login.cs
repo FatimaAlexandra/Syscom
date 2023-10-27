@@ -2,6 +2,7 @@ using MySql.Data.MySqlClient;
 using Syscom.Controlador;
 using Syscom.Modelo;
 using Syscom.View;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Syscom
 {
@@ -14,6 +15,10 @@ namespace Syscom
         {
             InitializeComponent();
             loginController = new LoginController();
+            lblEstadoConexion.Visible = false;
+            btnCrudClientes.Visible = false;
+            btnProveedores.Visible = false;
+            btnMenu.Visible = false;
         }
 
         private void lblEstadoConexion_Click(object sender, EventArgs e)
@@ -23,6 +28,7 @@ namespace Syscom
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txtPass.PasswordChar = '*';
             try
             {
                 MySqlConnection conexion = conexionBD.ObtenerConexion();
@@ -66,7 +72,7 @@ namespace Syscom
 
             if (loginController.AutenticarUsuario(usuario, pass, out string rol))
             {
-                Dashboard frmMenu = new Dashboard(usuario, rol);    
+                Dashboard frmMenu = new Dashboard(usuario, rol);
                 frmMenu.ShowDialog();
                 Limpiar();
 
@@ -86,7 +92,21 @@ namespace Syscom
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            // Si el PasswordChar actual es '*', cambia a '\0'(sin censura).// De lo contrario, cambia de vuelta a '*' para ocultar la contraseña.
+            if (txtPass.PasswordChar == '*')
+            {
+                txtPass.PasswordChar = '\0'; // Mostrar la contraseña sin censura
+            }
+            else
+            {
+                txtPass.PasswordChar = '*'; // Ocultar la contraseña con asteriscos
+            }
+
         }
     }
 

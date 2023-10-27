@@ -83,6 +83,16 @@ namespace Syscom.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ojo {
+            get {
+                object obj = ResourceManager.GetObject("ojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap propuesta {
             get {
                 object obj = ResourceManager.GetObject("propuesta", resourceCulture);
@@ -96,6 +106,16 @@ namespace Syscom.Properties {
         internal static System.Drawing.Bitmap proveedor {
             get {
                 object obj = ResourceManager.GetObject("proveedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario {
+            get {
+                object obj = ResourceManager.GetObject("usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

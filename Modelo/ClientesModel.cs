@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Syscom.Modelo
 {
-    internal class ClientesModel
+    internal class ClientesModel: UsuariosModel
     {
         private int id;
         private string nombre;
         private string email;
         private string telefono;
         private string empresa;
+        private int id_usuario;
 
         public int Id
         {
@@ -42,6 +43,12 @@ namespace Syscom.Modelo
         {
             get { return empresa; }
             set { empresa = value; }
+        }
+
+        public int IdUsuario
+        {
+            get { return id_usuario; }
+            set { id_usuario = value; }
         }
     }
 }

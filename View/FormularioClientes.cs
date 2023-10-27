@@ -22,25 +22,44 @@ namespace Syscom.View
             // En el constructor del formulario de clientes, carga automáticamente los clientes en el DataGridView.
             CargarClientesEnDataGridView();
 
+
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            // Crear un objeto ClientesModel y asignar valores desde los controles del formulario.
-            ClientesModel nuevoCliente = new ClientesModel();
-            nuevoCliente.Nombre = txtNombre.Text;
-            nuevoCliente.Email = txtEmail.Text;
-            nuevoCliente.Telefono = txtTelefono.Text;
-            nuevoCliente.Empresa = txtEmpresa.Text;
+            // Recopila los datos del cliente desde los controles en el formulario
+            string nombre = txtNombre.Text;
+            string email = txtEmail.Text;
+            string telefono = txtTelefono.Text;
+            string empresa = txtEmpresa.Text;
 
-            // Llamar al método del controlador para insertar el cliente.
-            clientesController.InsertarCliente(nuevoCliente);
+            // Obtiene el ID del usuario seleccionado en el ComboBox
+            int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 
-            // Limpiar los controles después de la inserción.
-            Limpiar();
-            // Mostrar un mensaje de "Agregado exitosamente".
-            MessageBox.Show("Cliente agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Llamar al método para cargar y mostrar los clientes en el DataGridView.
+
+            // Crea una instancia de ClientesModel con los datos del cliente
+            ClientesModel cliente = new ClientesModel
+            {
+                Nombre = nombre,
+                Email = email,
+                Telefono = telefono,
+                Empresa = empresa,
+                IdUsuario = idUsuario
+            };
+
+            // Llama al método para insertar el cliente
+            try
+            {
+                clientesController.InsertarCliente(cliente);
+                MessageBox.Show("Cliente insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpia los campos después de insertar el cliente
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             CargarClientesEnDataGridView();
         }
         private void Limpiar()
@@ -49,6 +68,7 @@ namespace Syscom.View
             txtEmail.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             txtEmpresa.Text = string.Empty;
+            cmbUsuarios.SelectedIndex = -1;
         }
         private void CargarClientesEnDataGridView()
         {
@@ -69,18 +89,37 @@ namespace Syscom.View
             dgvClientes.Columns.Add("Email", "Email");
             dgvClientes.Columns.Add("Telefono", "Telefono");
             dgvClientes.Columns.Add("Empresa", "Empresa");
+            dgvClientes.Columns.Add("IdUsuario", "IdUsuario");
             // Ocultar la columna "ID"
             dgvClientes.Columns["Id"].Visible = false;
 
             foreach (ClientesModel cliente in listaClientes)
             {
-                dgvClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Email, cliente.Telefono, cliente.Empresa);
+                dgvClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Email, cliente.Telefono, cliente.Empresa, cliente.IdUsuario);
             }
         }
         private void FormularioClientes_Load(object sender, EventArgs e)
         {
-
+            CargarClientesEnDataGridView();
+            CargarUsuariosEnComboBox();
         }
+        private void CargarUsuariosEnComboBox()
+        {
+            // Llama al método del controlador para obtener la lista de usuarios.
+            List<UsuariosModel> listaUsuarios = clientesController.ObtenerUsuarios();
+
+            // Limpia el ComboBox si ya tenía elementos.
+            cmbUsuarios.Items.Clear();
+
+            // Configura el ComboBox para mostrar el nombre y retener el id como el valor asociado.
+            cmbUsuarios.DisplayMember = "Usuario"; // Nombre de la propiedad en UsuariosModel que contiene el nombre.
+            cmbUsuarios.ValueMember = "Id"; // Nombre de la propiedad en UsuariosModel que contiene el id.
+
+            // Agrega los usuarios al ComboBox.
+            cmbUsuarios.DataSource = listaUsuarios;
+        }
+
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -94,26 +133,24 @@ namespace Syscom.View
 
         private void dgvClientes_SelectionChanged(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView.
-            if (dgvClientes.SelectedRows.Count > 0)
+            if (dgvClientes.SelectedRows.Count >= 0)
             {
-                // Obtener el cliente seleccionado.
                 DataGridViewRow filaSeleccionada = dgvClientes.SelectedRows[0];
-
-                // Obtener los datos del cliente desde las celdas del DataGridView.
                 int clienteId = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
                 string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
+                int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
 
-                // Cargar los datos del cliente en los TextBox para edición.
                 txtNombre.Text = nombre;
                 txtEmail.Text = email;
                 txtTelefono.Text = telefono;
                 txtEmpresa.Text = empresa;
 
-                // Habilitar los TextBox para edición.
+                // Establecer la selección en el ComboBox según el ID del usuario.
+                cmbUsuarios.SelectedValue = idUsuario;
+
                 txtNombre.Enabled = true;
                 txtEmail.Enabled = true;
                 txtTelefono.Enabled = true;
@@ -136,7 +173,8 @@ namespace Syscom.View
                     Nombre = txtNombre.Text,
                     Email = txtEmail.Text,
                     Telefono = txtTelefono.Text,
-                    Empresa = txtEmpresa.Text
+                    Empresa = txtEmpresa.Text,
+                    IdUsuario = cmbUsuarios.SelectedIndex
                 };
 
                 // Llamar al método del controlador para actualizar el cliente.
@@ -147,6 +185,7 @@ namespace Syscom.View
                 txtEmail.Enabled = false;
                 txtTelefono.Enabled = false;
                 txtEmpresa.Enabled = false;
+                cmbUsuarios.SelectedIndex = 0;
 
                 // Limpiar los TextBox.
                 Limpiar();
@@ -186,26 +225,24 @@ namespace Syscom.View
 
         private void dgvClientes_SelectionChanged_1(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView.
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                // Obtener el cliente seleccionado.
                 DataGridViewRow filaSeleccionada = dgvClientes.SelectedRows[0];
-
-                // Obtener los datos del cliente desde las celdas del DataGridView.
                 int clienteId = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 string email = filaSeleccionada.Cells["Email"].Value.ToString();
                 string telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
                 string empresa = filaSeleccionada.Cells["Empresa"].Value.ToString();
+                int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
 
-                // Cargar los datos del cliente en los TextBox para edición.
                 txtNombre.Text = nombre;
                 txtEmail.Text = email;
                 txtTelefono.Text = telefono;
                 txtEmpresa.Text = empresa;
 
-                // Habilitar los TextBox para edición.
+                // Seleccionar el usuario correspondiente en el ComboBox por su ID
+                cmbUsuarios.SelectedValue = idUsuario;
+
                 txtNombre.Enabled = true;
                 txtEmail.Enabled = true;
                 txtTelefono.Enabled = true;
@@ -221,6 +258,11 @@ namespace Syscom.View
         private void dgvClientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvClientes.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+        }
+
+        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
