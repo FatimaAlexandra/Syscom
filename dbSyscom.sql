@@ -29,9 +29,7 @@ CREATE TABLE Proveedores (
     nombre VARCHAR(100),
     email VARCHAR(100),
     telefono VARCHAR(20),
-    empresa VARCHAR(100),
-    id_usuario INT, 
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id) -- Clave foránea para la vinculación con Usuarios
+    empresa VARCHAR(100)
 );
 
 -- Crear la tabla de Licitaciones

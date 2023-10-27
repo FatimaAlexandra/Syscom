@@ -79,5 +79,12 @@ namespace Syscom.View
 
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            FormularioUsuarios frmUsuarios = new FormularioUsuarios();
+
+            frmUsuarios.ShowDialog();
+        }
     }
 }
