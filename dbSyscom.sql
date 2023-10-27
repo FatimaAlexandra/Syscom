@@ -75,3 +75,7 @@ INSERT INTO Usuarios (usuario, pass, email, rol) VALUES
     ('Admin', '123', 'admin@ejemplo.com', 'administrador');
  
 select * from Usuarios;
+
+
+INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
+VALUES ('SIMAN', 'cliente@email.com', '1234567890', 'Nombre de la Empresa', 1);
