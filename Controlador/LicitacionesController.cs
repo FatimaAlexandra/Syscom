@@ -89,6 +89,34 @@ namespace Syscom.Controlador
             return licitacion;
         }
 
+        private int ObtenerIdDeLaLicitacionRecienAgregada()
+        {
+            int idLicitacionAgregada = -1;  // Valor predeterminado en caso de error
+
+            // Supongamos que estás utilizando MySQL
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand("SELECT LAST_INSERT_ID()", conexion))
+                    {
+                        // Ejecuta la consulta y obtén el ID generado automáticamente
+                        idLicitacionAgregada = Convert.ToInt32(comando.ExecuteScalar());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al obtener el ID de la licitación recién agregada: " + ex.Message);
+                }
+            }
+
+            return idLicitacionAgregada;
+        }
+
+
 
 
     }

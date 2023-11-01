@@ -1,4 +1,5 @@
-﻿using MySqlX.XDevAPI;
+﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using Syscom.Controlador;
 using Syscom.Modelo;
 using System;
@@ -107,6 +108,12 @@ namespace Syscom.View
                     LimpiarCampos();
                     btnAgregarProductos.Enabled = true;
                     btnGenerarLicitacion.Enabled = false;
+
+                    // Obtener el ID de la licitación recién agregada
+                    int idLicitacionAgregada = ObtenerIdDeLaLicitacionRecienAgregada();
+
+                    // Usar idLicitacionAgregada para cargar los datos en los campos
+                    CargarDatosDeLicitacion(idLicitacionAgregada);
                 }
                 else
                 {
@@ -122,14 +129,77 @@ namespace Syscom.View
             }
 
         }
-        
-        
-        
-        
-        
+
+        private int ObtenerIdDeLaLicitacionRecienAgregada()
+        {
+            int idLicitacionAgregada = -1;  // Valor predeterminado en caso de error
+
+            // Supongamos que estás utilizando MySQL
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand("SELECT LAST_INSERT_ID()", conexion))
+                    {
+                        // Ejecuta la consulta y obtén el ID generado automáticamente
+                        idLicitacionAgregada = Convert.ToInt32(comando.ExecuteScalar());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al obtener el ID de la licitación recién agregada: " + ex.Message);
+                }
+            }
+
+            return idLicitacionAgregada;
+        }
+        private void CargarDatosDeLicitacion(int idLicitacion)
+        {
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT id, titulo, descripcion, fecha_inicio, fecha_fin, estado, id_cliente FROM Licitaciones WHERE id = @idLicitacion";
+                        comando.Parameters.AddWithValue("@idLicitacion", idLicitacion);
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtId.Text = reader["id"].ToString();
+                                txtTitulo.Text = reader["titulo"].ToString();
+                                txtDescripcion.Text = reader["descripcion"].ToString();
+                                tpFechaInicio.Value = Convert.ToDateTime(reader["fecha_inicio"]);
+                                tpFechaFin.Value = Convert.ToDateTime(reader["fecha_fin"]);
+                                txtEstado.Text = reader["estado"].ToString();
+                                txtIdCliente.Text = reader["id_cliente"].ToString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al cargar los datos de la licitación: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
         // Método para limpiar los campos del formulario después de agregar una licitación
         private void LimpiarCampos()
         {
+            txtId.Text = "";
             txtTitulo.Text = "";
             txtDescripcion.Text = "";
             tpFechaInicio.Value = DateTime.Now;
