@@ -17,7 +17,9 @@ namespace Syscom.View
     public partial class FormularioLicitaciones : Form
     {
         private string usuario;
+        private int idLicitacion; // Campo para almacenar el idLicitacion
         private UsuarioController usuariosController;
+
 
         private UsuarioController usuarioController = new UsuarioController();
         private ClientesModel clienteSeleccionado;
@@ -27,8 +29,6 @@ namespace Syscom.View
             usuariosController = new UsuarioController();
             btnAgregarProductos.Enabled = false;
             btnGenerarLicitacion.Enabled = true;
-            btnLanzarLicitacion.Enabled = false;
-
 
 
             // Obtén el ID del cliente actual
@@ -36,6 +36,8 @@ namespace Syscom.View
 
             // Muestra el ID del cliente en el TextBox
             MostrarIdCliente(idClienteActual);
+
+            // Suscribe el manejador al evento ProductoAgregado
 
         }
         private void MostrarIdCliente(int idCliente)
@@ -52,8 +54,12 @@ namespace Syscom.View
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-            FormularioProductos frmProductos = new FormularioProductos();
 
+            // Obtiene el ID de la licitación recién agregada
+            int idLicitacionAgregada = ObtenerIdDeLaLicitacionRecienAgregada();
+
+            // Pasa el idLicitacion al formulario FormularioProductos
+            FormularioProductos frmProductos = new FormularioProductos(idLicitacionAgregada);
             frmProductos.ShowDialog();
         }
 
@@ -114,6 +120,8 @@ namespace Syscom.View
 
                     // Usar idLicitacionAgregada para cargar los datos en los campos
                     CargarDatosDeLicitacion(idLicitacionAgregada);
+                    // Después de agregar la licitación con éxito
+
                 }
                 else
                 {
@@ -205,5 +213,12 @@ namespace Syscom.View
             tpFechaInicio.Value = DateTime.Now;
             tpFechaFin.Value = DateTime.Now;
         }
+
+
+
+
+
+
+
     }
 }

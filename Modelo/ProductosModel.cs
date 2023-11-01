@@ -9,9 +9,11 @@ namespace Syscom.Modelo
     internal class ProductosModel
     {
         private int id;
-        private string nombre;
+        private string nombreProducto;
         private string descripcion;
-        private decimal precio;
+        private decimal precioUnitario;
+        private int cantidad;
+        private int idLicitacion;
 
         public int Id
         {
@@ -19,10 +21,10 @@ namespace Syscom.Modelo
             set { id = value; }
         }
 
-        public string Nombre
+        public string NombreProducto
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return nombreProducto; }
+            set { nombreProducto = value; }
         }
 
         public string Descripcion
@@ -31,10 +33,22 @@ namespace Syscom.Modelo
             set { descripcion = value; }
         }
 
-        public decimal Precio
+        public decimal PrecioUnitario
         {
-            get { return precio; }
-            set { precio = value; }
+            get { return precioUnitario; }
+            set { precioUnitario = value; }
+        }
+
+        public int Cantidad
+        {
+            get { return cantidad; }
+            set { cantidad = value; }
+        }
+
+        public int IdLicitacion
+        {
+            get { return idLicitacion; }
+            set { idLicitacion = value; }
         }
     }
 }

@@ -68,12 +68,12 @@ namespace Syscom.Controlador
                                 licitacion = new LicitacionesModel
                                 {
                                     Id = reader.GetInt32("id"),
-                                    IdCliente = reader.GetInt32("id_cliente"),
                                     Titulo = reader.GetString("titulo"),
                                     Descripcion = reader.GetString("descripcion"),
                                     FechaInicio = reader.GetDateTime("fecha_inicio"),
                                     FechaFin = reader.GetDateTime("fecha_fin"),
-                                    Estado = reader.IsDBNull("estado") ? null : reader.GetString("estado")
+                                    Estado = reader.IsDBNull("estado") ? null : reader.GetString("estado"),
+                                    IdCliente = reader.GetInt32("id_cliente")
                                 };
                             }
                         }
@@ -115,7 +115,6 @@ namespace Syscom.Controlador
 
             return idLicitacionAgregada;
         }
-
 
 
 
