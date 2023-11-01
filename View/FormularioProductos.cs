@@ -24,10 +24,11 @@ namespace Syscom.View
             txtPrecio.Visible = false;
             lblPrecio.Visible = false;
             CargarProductosEnDataGridView();
+
         }
         private void FormularioProductos_Load(object sender, EventArgs e)
         {
-
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
 
@@ -114,6 +115,52 @@ namespace Syscom.View
             }
         }
 
+        private int productoSeleccionadoId = -1; // Variable para almacenar el ID del producto seleccionado
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvProductos.SelectedRows[0];
+                productoSeleccionadoId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            }
+            else
+            {
+                productoSeleccionadoId = -1; // No se ha seleccionado ninguna fila
+            }
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView.
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del producto seleccionado.
+                int productoId = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["Id"].Value);
+
+                // Mostrar un cuadro de diálogo de confirmación antes de eliminar el producto.
+                DialogResult resultado = MessageBox.Show("¿Seguro que deseas eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    ProductosController productosController = new ProductosController();
+                    // Llamar al método del controlador para eliminar el producto.
+                    bool exito = productosController.EliminarProducto(productoId);
+
+                    if (exito)
+                    {
+                        // Mostrar un mensaje de "Producto eliminado exitosamente".
+                        MessageBox.Show("Producto eliminado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Recargar la lista de productos en el DataGridView después de la eliminación.
+                        CargarProductosEnDataGridView();
+                    }
+                    else
+                    {
+                        // Mostrar un mensaje de error si la eliminación falla.
+                        MessageBox.Show("Error al eliminar el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

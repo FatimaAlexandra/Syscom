@@ -55,7 +55,7 @@ namespace Syscom.Controlador
                     using (MySqlCommand comando = new MySqlCommand())
                     {
                         comando.Connection = conexion;
-                        comando.CommandText = "SELECT * FROM Productos WHERE idLicitacion = @idLicitacion";
+                        comando.CommandText = "SELECT * FROM Productos WHERE id_licitacion = @idLicitacion";
                         comando.Parameters.AddWithValue("@idLicitacion", idLicitacion);
 
                         using (MySqlDataReader reader = comando.ExecuteReader())
@@ -87,6 +87,32 @@ namespace Syscom.Controlador
             return productos;
         }
 
+        public bool EliminarProducto(int idProducto)
+        {
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "DELETE FROM Productos WHERE id = @idProducto";
+                        comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                        int filasAfectadas = comando.ExecuteNonQuery();
+                        return filasAfectadas > 0; // Si se eliminó al menos una fila, retorna true
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al eliminar el producto: " + ex.Message);
+                    return false;
+                }
+            }
+        }
 
 
 

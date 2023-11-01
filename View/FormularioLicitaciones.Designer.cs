@@ -291,7 +291,7 @@
             btnAgregarProductos.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnAgregarProductos.Size = new Size(225, 56);
             btnAgregarProductos.TabIndex = 30;
-            btnAgregarProductos.Text = "Ver producos";
+            btnAgregarProductos.Text = "Agregar productos";
             btnAgregarProductos.Click += btnAgregarProductos_Click;
             // 
             // txtId
