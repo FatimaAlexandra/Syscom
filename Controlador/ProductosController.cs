@@ -65,9 +65,9 @@ namespace Syscom.Controlador
                                 ProductosModel producto = new ProductosModel
                                 {
                                     Id = Convert.ToInt32(reader["id"]),
-                                    NombreProducto = reader["nombre"].ToString(),
+                                    NombreProducto = reader["nombre_producto"].ToString(),
                                     Descripcion = reader["descripcion"].ToString(),
-                                    PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"]),
+                                    PrecioUnitario = Convert.ToDecimal(reader["precio_unitario"]),
                                     Cantidad = Convert.ToInt32(reader["cantidad"])
                                     // Agrega más propiedades según tu modelo
                                 };

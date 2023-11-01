@@ -86,25 +86,31 @@ namespace Syscom.View
 
         private void CargarProductosEnDataGridView()
         {
-            // Crea una instancia de ProductosController
-            ProductosController productosController = new ProductosController();
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // Obtén la lista de productos relacionados con la licitación actual
-            List<ProductosModel> productos = productosController.ObtenerProductosPorLicitacion(idLicitacion);
-
-            // Limpia el DataGridView antes de cargar los productos
+            // Limpia el DataGridView antes de cargar los datos.
             dgvProductos.Rows.Clear();
+            dgvProductos.Columns.Clear(); // Limpia las columnas también
 
-            // Recorre la lista de productos y agrega cada producto al DataGridView
-            foreach (ProductosModel producto in productos)
+            // Evitar que se agregue automáticamente una fila en blanco al final
+            dgvProductos.AllowUserToAddRows = false;
+
+            ProductosController productosController = new ProductosController(); // Crear una instancia de ProductosController
+            List<ProductosModel> listaProductos = productosController.ObtenerProductosPorLicitacion(idLicitacion); // Llama al método a través de la instancia
+
+
+            // Agrega las columnas al DataGridView
+            dgvProductos.Columns.Add("Id", "ID");
+            dgvProductos.Columns.Add("NombreProducto", "Nombre del Producto");
+            dgvProductos.Columns.Add("Descripcion", "Descripción");
+            dgvProductos.Columns.Add("PrecioUnitario", "Precio Unitario");
+            dgvProductos.Columns.Add("Cantidad", "Cantidad");
+            // Puedes ocultar la columna "ID" si lo prefieres
+            dgvProductos.Columns["Id"].Visible = false;
+
+            foreach (ProductosModel producto in listaProductos)
             {
-                dgvProductos.Rows.Add(
-                    producto.Id,
-                    producto.NombreProducto,
-                    producto.Descripcion,
-                    producto.PrecioUnitario,
-                    producto.Cantidad
-                );
+                dgvProductos.Rows.Add(producto.Id, producto.NombreProducto, producto.Descripcion, producto.PrecioUnitario, producto.Cantidad);
             }
         }
 
