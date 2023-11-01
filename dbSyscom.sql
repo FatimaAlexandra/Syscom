@@ -40,10 +40,10 @@ CREATE TABLE Licitaciones (
     descripcion TEXT,
     fecha_inicio DATE,
     fecha_fin DATE,
-	ganador BOOLEAN null,
     estado VARCHAR(50) null, 
     FOREIGN KEY (id_cliente) REFERENCES Clientes(id)
 );
+
 
 -- Crear la tabla de Propuestas Económicas
 CREATE TABLE PropuestasEconomicas (
@@ -76,4 +76,14 @@ select * from Usuarios;
 
 
 INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
-VALUES ('SIMAN', 'cliente@email.com', '1234567890', 'Nombre de la Empresa', 1);
+VALUES ('Diego Pablo Castillo', 'cr@email.com', '2345-6789', 'Casa Rivas', 1);
+INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
+VALUES ('Ronald Hernandez', 'Manteinance@email.com', '2345-6789', 'Manteinance HR', 4);
+INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
+VALUES ('David Flores', 'TechSolutions@email.com', '2302-0789', 'TechSolutions', 5);
+
+Select * from Licitaciones;
+select * from Productos;
+
+INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
+VALUES ('Fatima Alexandra Castillo', 'glm@email.com', '2567-4567', 'GomezLee Marketing', 2);

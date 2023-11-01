@@ -16,6 +16,7 @@ namespace Syscom.View
 
         private string rolUsuario;
         private string usuario;
+
         public Dashboard(string usuario, string rolUsuario)
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace Syscom.View
 
         private void btnLicitacion_Click(object sender, EventArgs e)
         {
-            FormularioLicitaciones licitaciones = new FormularioLicitaciones();
+            FormularioLicitaciones licitaciones = new FormularioLicitaciones(usuario);
 
             licitaciones.ShowDialog();
         }
@@ -87,6 +88,16 @@ namespace Syscom.View
             FormularioUsuarios frmUsuarios = new FormularioUsuarios();
 
             frmUsuarios.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
