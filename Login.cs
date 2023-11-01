@@ -18,7 +18,7 @@ namespace Syscom
             loginController = new LoginController();
             lblEstadoConexion.Visible = false;
         }
-       
+
         private void lblEstadoConexion_Click(object sender, EventArgs e)
         {
 
@@ -119,7 +119,7 @@ namespace Syscom
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
 
         private void guna2HtmlLabel4_Click(object sender, EventArgs e)
@@ -129,7 +129,12 @@ namespace Syscom
 
         private void Login_MouseDown(object sender, MouseEventArgs e)
         {
-            
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

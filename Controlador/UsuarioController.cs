@@ -97,5 +97,44 @@ namespace Syscom.Controlador
         }
 
 
+
+        public int ObtenerIdClientePorNombreUsuario(string nombreUsuario)
+        {
+            int idCliente = -1; // Valor predeterminado en caso de que no se encuentre un cliente
+
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT id_usuario FROM Usuarios WHERE usuario = @nombreUsuario";
+                        comando.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                idCliente = reader.GetInt32("id_usuario");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones, muestra un mensaje de error o registra la excepción
+                    Console.WriteLine("Error al obtener el ID de cliente: " + ex.Message);
+                }
+            }
+
+            return idCliente;
+        }
+
+
+
+
     }
 }

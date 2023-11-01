@@ -52,9 +52,9 @@
             label5 = new Label();
             dgvProductos = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            cmbIdCliente = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            txtIdUsuario = new Guna.UI2.WinForms.Guna2TextBox();
+            tpFechaFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            tpFechaInicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
@@ -133,9 +133,9 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(cmbIdCliente);
-            guna2Panel1.Controls.Add(guna2DateTimePicker2);
-            guna2Panel1.Controls.Add(guna2DateTimePicker1);
+            guna2Panel1.Controls.Add(txtIdUsuario);
+            guna2Panel1.Controls.Add(tpFechaFin);
+            guna2Panel1.Controls.Add(tpFechaInicio);
             guna2Panel1.Controls.Add(guna2TextBox2);
             guna2Panel1.Controls.Add(guna2TextBox1);
             guna2Panel1.Controls.Add(label1);
@@ -151,53 +151,56 @@
             guna2Panel1.Size = new Size(870, 314);
             guna2Panel1.TabIndex = 20;
             // 
-            // cmbIdCliente
+            // txtIdUsuario
             // 
-            cmbIdCliente.BackColor = Color.Transparent;
-            cmbIdCliente.CustomizableEdges = customizableEdges1;
-            cmbIdCliente.DrawMode = DrawMode.OwnerDrawFixed;
-            cmbIdCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbIdCliente.FocusedColor = Color.FromArgb(94, 148, 255);
-            cmbIdCliente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cmbIdCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbIdCliente.ForeColor = Color.FromArgb(68, 88, 112);
-            cmbIdCliente.ItemHeight = 30;
-            cmbIdCliente.Location = new Point(560, 255);
-            cmbIdCliente.Name = "cmbIdCliente";
-            cmbIdCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cmbIdCliente.Size = new Size(283, 36);
-            cmbIdCliente.TabIndex = 30;
-            cmbIdCliente.SelectedIndexChanged += cmbIdCliente_SelectedIndexChanged;
+            txtIdUsuario.CustomizableEdges = customizableEdges1;
+            txtIdUsuario.DefaultText = "";
+            txtIdUsuario.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtIdUsuario.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtIdUsuario.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtIdUsuario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtIdUsuario.Enabled = false;
+            txtIdUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIdUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdUsuario.Location = new Point(560, 261);
+            txtIdUsuario.Name = "txtIdUsuario";
+            txtIdUsuario.PasswordChar = '\0';
+            txtIdUsuario.PlaceholderText = "";
+            txtIdUsuario.SelectedText = "";
+            txtIdUsuario.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtIdUsuario.Size = new Size(183, 41);
+            txtIdUsuario.TabIndex = 31;
             // 
-            // guna2DateTimePicker2
+            // tpFechaFin
             // 
-            guna2DateTimePicker2.Checked = true;
-            guna2DateTimePicker2.CustomizableEdges = customizableEdges3;
-            guna2DateTimePicker2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker2.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker2.Location = new Point(560, 153);
-            guna2DateTimePicker2.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker2.MinDate = new DateTime(2023, 10, 25, 0, 0, 0, 0);
-            guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            guna2DateTimePicker2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2DateTimePicker2.Size = new Size(283, 45);
-            guna2DateTimePicker2.TabIndex = 29;
-            guna2DateTimePicker2.Value = new DateTime(2023, 10, 25, 0, 0, 0, 0);
+            tpFechaFin.Checked = true;
+            tpFechaFin.CustomizableEdges = customizableEdges3;
+            tpFechaFin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tpFechaFin.Format = DateTimePickerFormat.Long;
+            tpFechaFin.Location = new Point(560, 153);
+            tpFechaFin.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
+            tpFechaFin.MinDate = new DateTime(2023, 10, 25, 0, 0, 0, 0);
+            tpFechaFin.Name = "tpFechaFin";
+            tpFechaFin.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            tpFechaFin.Size = new Size(283, 45);
+            tpFechaFin.TabIndex = 29;
+            tpFechaFin.Value = new DateTime(2023, 10, 25, 0, 0, 0, 0);
             // 
-            // guna2DateTimePicker1
+            // tpFechaInicio
             // 
-            guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges5;
-            guna2DateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(560, 48);
-            guna2DateTimePicker1.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker1.MinDate = new DateTime(2023, 10, 25, 0, 0, 0, 0);
-            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2DateTimePicker1.Size = new Size(283, 45);
-            guna2DateTimePicker1.TabIndex = 23;
-            guna2DateTimePicker1.Value = new DateTime(2023, 10, 25, 17, 53, 52, 466);
+            tpFechaInicio.Checked = true;
+            tpFechaInicio.CustomizableEdges = customizableEdges5;
+            tpFechaInicio.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tpFechaInicio.Format = DateTimePickerFormat.Long;
+            tpFechaInicio.Location = new Point(560, 48);
+            tpFechaInicio.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
+            tpFechaInicio.MinDate = new DateTime(2023, 10, 25, 0, 0, 0, 0);
+            tpFechaInicio.Name = "tpFechaInicio";
+            tpFechaInicio.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            tpFechaInicio.Size = new Size(283, 45);
+            tpFechaInicio.TabIndex = 23;
+            tpFechaInicio.Value = new DateTime(2023, 10, 25, 17, 53, 52, 466);
             // 
             // guna2TextBox2
             // 
@@ -373,10 +376,10 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker tpFechaFin;
+        private Guna.UI2.WinForms.Guna2DateTimePicker tpFechaInicio;
         private Guna.UI2.WinForms.Guna2Button btnAgregarProductos;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbIdCliente;
         private Guna.UI2.WinForms.Guna2Button btnLanzarLicitacion;
+        private Guna.UI2.WinForms.Guna2TextBox txtIdUsuario;
     }
 }

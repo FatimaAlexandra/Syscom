@@ -35,10 +35,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnLogin = new Guna.UI2.WinForms.Guna2Button();
@@ -46,9 +45,14 @@
             txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblEstadoConexion = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pictureBox2 = new PictureBox();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -157,33 +161,31 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.FromArgb(0, 122, 204);
-            guna2Panel1.CustomizableEdges = customizableEdges8;
+            guna2Panel1.BackColor = Color.FromArgb(0, 0, 64);
+            guna2Panel1.Controls.Add(guna2HtmlLabel4);
+            guna2Panel1.Controls.Add(guna2CirclePictureBox1);
+            guna2Panel1.CustomizableEdges = customizableEdges9;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel1.Size = new Size(250, 330);
             guna2Panel1.TabIndex = 19;
             // 
-            // guna2ImageButton2
+            // guna2CirclePictureBox1
             // 
-            guna2ImageButton2.BackgroundImage = Properties.Resources.x4;
-            guna2ImageButton2.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2ImageButton2.CheckedState.ImageSize = new Size(64, 64);
-            guna2ImageButton2.HoverState.ImageSize = new Size(64, 64);
-            guna2ImageButton2.Image = (Image)resources.GetObject("guna2ImageButton2.Image");
-            guna2ImageButton2.ImageOffset = new Point(0, 0);
-            guna2ImageButton2.ImageRotate = 0F;
-            guna2ImageButton2.ImageSize = new Size(4, 4);
-            guna2ImageButton2.ImeMode = ImeMode.NoControl;
-            guna2ImageButton2.Location = new Point(740, 3);
-            guna2ImageButton2.Name = "guna2ImageButton2";
-            guna2ImageButton2.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2ImageButton2.Size = new Size(31, 32);
-            guna2ImageButton2.TabIndex = 19;
-            guna2ImageButton2.Click += guna2ImageButton2_Click;
+            guna2CirclePictureBox1.BackColor = Color.Transparent;
+            guna2CirclePictureBox1.FillColor = Color.Transparent;
+            guna2CirclePictureBox1.Image = Properties.Resources.syscom;
+            guna2CirclePictureBox1.ImageRotate = 0F;
+            guna2CirclePictureBox1.Location = new Point(55, 51);
+            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CirclePictureBox1.Size = new Size(139, 134);
+            guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2CirclePictureBox1.TabIndex = 0;
+            guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2HtmlLabel3
             // 
@@ -207,6 +209,28 @@
             lblEstadoConexion.TabIndex = 21;
             lblEstadoConexion.Text = "_";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.x;
+            pictureBox2.Location = new Point(734, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel4.ForeColor = SystemColors.ButtonFace;
+            guna2HtmlLabel4.Location = new Point(71, 182);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(99, 38);
+            guna2HtmlLabel4.TabIndex = 23;
+            guna2HtmlLabel4.Text = "SYSCOM";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -214,8 +238,8 @@
             BackColor = Color.FromArgb(15, 15, 15);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(780, 330);
+            Controls.Add(pictureBox2);
             Controls.Add(lblEstadoConexion);
-            Controls.Add(guna2ImageButton2);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2ImageButton1);
             Controls.Add(guna2Panel1);
@@ -226,12 +250,15 @@
             Controls.Add(guna2HtmlLabel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
-            Opacity = 0.9D;
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             MouseDown += Login_MouseDown;
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,8 +271,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPass;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblEstadoConexion;
+        private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
     }
 }

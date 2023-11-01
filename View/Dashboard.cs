@@ -71,7 +71,7 @@ namespace Syscom.View
 
         private void btnLicitacion_Click(object sender, EventArgs e)
         {
-            FormularioLicitaciones licitaciones = new FormularioLicitaciones();
+            FormularioLicitaciones licitaciones = new FormularioLicitaciones(usuario);
 
             licitaciones.ShowDialog();
         }

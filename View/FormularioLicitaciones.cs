@@ -15,9 +15,12 @@ namespace Syscom.View
 {
     public partial class FormularioLicitaciones : Form
     {
-        public FormularioLicitaciones()
+        private string usuario;
+        public FormularioLicitaciones(string usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+            txtIdUsuario.Text = usuario + "\n";
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -39,30 +42,13 @@ namespace Syscom.View
 
         private void cmbIdCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbIdCliente.SelectedItem != null)
-            {
-                string clienteNombre = cmbIdCliente.SelectedItem.ToString();
-                int clienteId = Convert.ToInt32(cmbIdCliente.SelectedValue);
 
-            }
         }
-        private void CargarClientesEnComboBox()
+
+
+        private void lblUsuario_Click(object sender, EventArgs e)
         {
-            ClientesController clientesController = new ClientesController(); // Crear una instancia del controlador
-            // Llama al método del controlador para obtener la lista de clientes con nombres.
-            List<ClientesModel> listaClientes = clientesController.ObtenerClientesConNombres();
 
-
-            // Limpia el ComboBox si ya tenía elementos.
-            cmbIdCliente.Items.Clear();
-
-            // Agrega los clientes al ComboBox y configura el valor como el ID.
-            foreach (ClientesModel cliente in listaClientes)
-            {
-                cmbIdCliente.Items.Add(cliente.Empresa);
-                cmbIdCliente.ValueMember = cliente.Id.ToString();
-            }
         }
-
     }
 }
