@@ -25,6 +25,8 @@ namespace Syscom.View
             InitializeComponent();
             usuariosController = new UsuarioController();
             btnAgregarProductos.Enabled = false;
+            btnGenerarLicitacion.Enabled = true;
+            btnLanzarLicitacion.Enabled = false;
 
 
 
@@ -104,11 +106,13 @@ namespace Syscom.View
                     // Limpia los campos después de la inserción exitosa
                     LimpiarCampos();
                     btnAgregarProductos.Enabled = true;
+                    btnGenerarLicitacion.Enabled = false;
                 }
                 else
                 {
                     // Error durante la inserción, muestra un mensaje de error
                     MessageBox.Show("Error al agregar la licitación. Por favor, inténtelo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnGenerarLicitacion.Enabled = true;
                 }
             }
             else
