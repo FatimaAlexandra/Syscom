@@ -27,7 +27,6 @@ namespace Syscom.View
         {
             InitializeComponent();
             usuariosController = new UsuarioController();
-            btnAgregarProductos.Enabled = false;
             btnGenerarLicitacion.Enabled = true;
 
 
@@ -38,6 +37,7 @@ namespace Syscom.View
             MostrarIdCliente(idClienteActual);
 
             // Suscribe el manejador al evento ProductoAgregado
+
 
         }
         private void MostrarIdCliente(int idCliente)
@@ -55,12 +55,7 @@ namespace Syscom.View
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
 
-            // Obtiene el ID de la licitación recién agregada
-            int idLicitacionAgregada = ObtenerIdDeLaLicitacionRecienAgregada();
 
-            // Pasa el idLicitacion al formulario FormularioProductos
-            FormularioProductos frmProductos = new FormularioProductos(idLicitacionAgregada);
-            frmProductos.ShowDialog();
         }
 
         private void FormularioLicitaciones_Load(object sender, EventArgs e)
@@ -94,17 +89,22 @@ namespace Syscom.View
             // Obtener los valores de los controles en el formulario
             string titulo = txtTitulo.Text;
             string descripcion = txtDescripcion.Text;
+            string idClienteText = txtIdCliente.Text;
             DateTime fechaInicio = tpFechaInicio.Value;
             DateTime fechaFin = tpFechaFin.Value;
 
-            // Obtener el id del cliente desde el cuadro de texto txtIdCliente
-            int idCliente;
-            if (int.TryParse(txtIdCliente.Text, out idCliente))
+            if (string.IsNullOrWhiteSpace(titulo) || string.IsNullOrWhiteSpace(descripcion) || string.IsNullOrWhiteSpace(idClienteText))
             {
-                // Crear una instancia de LicitacionesController
+                // Muestra un mensaje de error si uno o más campos están vacíos
+                MessageBox.Show("Por favor, complete todos los campos antes de generar la licitación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si hay campos vacíos
+            }
+
+            // Validar y convertir el ID del cliente
+            if (int.TryParse(idClienteText, out int idCliente))
+            {
                 LicitacionesController licitacionesController = new LicitacionesController();
 
-                // Intentar agregar la licitación usando la instancia de licitacionesController
                 if (licitacionesController.AgregarLicitacion(titulo, descripcion, fechaInicio, fechaFin, idCliente))
                 {
                     // Inserción exitosa, muestra un mensaje de confirmación
@@ -112,20 +112,18 @@ namespace Syscom.View
 
                     // Limpia los campos después de la inserción exitosa
                     LimpiarCampos();
-                    btnAgregarProductos.Enabled = true;
                     btnGenerarLicitacion.Enabled = false;
 
-                    // Obtener el ID de la licitación recién agregada
                     int idLicitacionAgregada = ObtenerIdDeLaLicitacionRecienAgregada();
 
-                    // Usar idLicitacionAgregada para cargar los datos en los campos
                     CargarDatosDeLicitacion(idLicitacionAgregada);
-                    // Después de agregar la licitación con éxito
 
+                    FormularioProductos frmProductos = new FormularioProductos(idLicitacionAgregada);
+                    frmProductos.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    // Error durante la inserción, muestra un mensaje de error
                     MessageBox.Show("Error al agregar la licitación. Por favor, inténtelo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btnGenerarLicitacion.Enabled = true;
                 }

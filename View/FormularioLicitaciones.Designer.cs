@@ -46,8 +46,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label5 = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             txtEstado = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,7 +60,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            btnAgregarProductos = new Guna.UI2.WinForms.Guna2Button();
             txtId = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -276,27 +273,9 @@
             label2.TabIndex = 22;
             label2.Text = "Titulo de la licitación";
             // 
-            // btnAgregarProductos
-            // 
-            btnAgregarProductos.CustomizableEdges = customizableEdges17;
-            btnAgregarProductos.DisabledState.BorderColor = Color.DarkGray;
-            btnAgregarProductos.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAgregarProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAgregarProductos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAgregarProductos.FillColor = Color.LimeGreen;
-            btnAgregarProductos.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregarProductos.ForeColor = Color.White;
-            btnAgregarProductos.Location = new Point(76, 400);
-            btnAgregarProductos.Name = "btnAgregarProductos";
-            btnAgregarProductos.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnAgregarProductos.Size = new Size(225, 56);
-            btnAgregarProductos.TabIndex = 30;
-            btnAgregarProductos.Text = "Agregar productos";
-            btnAgregarProductos.Click += btnAgregarProductos_Click;
-            // 
             // txtId
             // 
-            txtId.CustomizableEdges = customizableEdges19;
+            txtId.CustomizableEdges = customizableEdges17;
             txtId.DefaultText = "";
             txtId.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtId.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -310,7 +289,7 @@
             txtId.PasswordChar = '\0';
             txtId.PlaceholderText = "";
             txtId.SelectedText = "";
-            txtId.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtId.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtId.Size = new Size(58, 45);
             txtId.TabIndex = 32;
             // 
@@ -318,9 +297,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(955, 490);
+            ClientSize = new Size(953, 412);
             Controls.Add(txtId);
-            Controls.Add(btnAgregarProductos);
             Controls.Add(guna2Panel1);
             Controls.Add(label5);
             Name = "FormularioLicitaciones";
@@ -346,7 +324,6 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2DateTimePicker tpFechaFin;
         private Guna.UI2.WinForms.Guna2DateTimePicker tpFechaInicio;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarProductos;
         private Guna.UI2.WinForms.Guna2TextBox txtIdCliente;
         private Guna.UI2.WinForms.Guna2TextBox txtEstado;
         private Guna.UI2.WinForms.Guna2TextBox txtId;
