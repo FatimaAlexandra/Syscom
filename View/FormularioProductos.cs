@@ -162,5 +162,28 @@ namespace Syscom.View
                 }
             }
         }
+
+        private void btnLanzarLicitacion_Click(object sender, EventArgs e)
+        {
+            LicitacionesController licitacionesController = new LicitacionesController();
+
+            // Llama al método del controlador para lanzar la licitación
+            bool exito = licitacionesController.LanzarLicitacion(idLicitacion);
+
+            if (exito)
+            {
+                // Actualización exitosa, muestra un mensaje de confirmación
+                MessageBox.Show("Licitación lanzada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Cierra el formulario actual
+                this.Close();
+            }
+            else
+            {
+                // Error durante la actualización, muestra un mensaje de error
+                MessageBox.Show("Error al lanzar la licitación. Por favor, inténtelo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Close();
+        }
     }
 }

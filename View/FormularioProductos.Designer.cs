@@ -295,6 +295,7 @@
             btnLanzarLicitacion.Size = new Size(158, 39);
             btnLanzarLicitacion.TabIndex = 36;
             btnLanzarLicitacion.Text = "Lanzar licitación";
+            btnLanzarLicitacion.Click += btnLanzarLicitacion_Click;
             // 
             // FormularioProductos
             // 
