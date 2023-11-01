@@ -45,11 +45,11 @@
             txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblEstadoConexion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pictureBox2 = new PictureBox();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -172,6 +172,17 @@
             guna2Panel1.Size = new Size(250, 330);
             guna2Panel1.TabIndex = 19;
             // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Consolas", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel4.ForeColor = SystemColors.ButtonFace;
+            guna2HtmlLabel4.Location = new Point(71, 182);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(99, 38);
+            guna2HtmlLabel4.TabIndex = 23;
+            guna2HtmlLabel4.Text = "SYSCOM";
+            // 
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.BackColor = Color.Transparent;
@@ -219,17 +230,6 @@
             pictureBox2.TabIndex = 22;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel4.ForeColor = SystemColors.ButtonFace;
-            guna2HtmlLabel4.Location = new Point(71, 182);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(99, 38);
-            guna2HtmlLabel4.TabIndex = 23;
-            guna2HtmlLabel4.Text = "SYSCOM";
             // 
             // Login
             // 

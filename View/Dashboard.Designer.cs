@@ -41,6 +41,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            pictureBox1 = new PictureBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
             btnProveedor = new Guna.UI2.WinForms.Guna2Button();
@@ -51,14 +52,18 @@
             lblRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.Black;
+            guna2Panel1.Controls.Add(guna2HtmlLabel4);
+            guna2Panel1.Controls.Add(pictureBox2);
             guna2Panel1.Controls.Add(pictureBox1);
             guna2Panel1.Controls.Add(guna2HtmlLabel3);
             guna2Panel1.Controls.Add(btnUsuarios);
@@ -73,6 +78,16 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Panel1.Size = new Size(271, 516);
             guna2Panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.perfil2;
+            pictureBox1.Location = new Point(51, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(168, 88);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // guna2HtmlLabel3
             // 
@@ -227,21 +242,34 @@
             guna2HtmlLabel2.TabIndex = 7;
             guna2HtmlLabel2.Text = "Usted ha iniciado sesión como:";
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            pictureBox1.Image = Properties.Resources.perfil2;
-            pictureBox1.Location = new Point(51, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(168, 88);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            pictureBox2.Image = Properties.Resources.cerrar_sesion;
+            pictureBox2.Location = new Point(8, 483);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(47, 26);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Consolas", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(192, 0, 0);
+            guna2HtmlLabel4.Location = new Point(56, 484);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(73, 24);
+            guna2HtmlLabel4.TabIndex = 12;
+            guna2HtmlLabel4.Text = "Log out";
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 525);
+            ControlBox = false;
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(lblRol);
             Controls.Add(guna2HtmlLabel1);
@@ -249,11 +277,13 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IsMdiContainer = true;
             Name = "Dashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             Load += Dashboard_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -272,5 +302,7 @@
         private Guna.UI2.WinForms.Guna2Button btnUsuarios;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
     }
 }
