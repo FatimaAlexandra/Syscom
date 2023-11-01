@@ -118,5 +118,34 @@ namespace Syscom.Controlador
 
 
 
+        public bool LanzarLicitacion(int idLicitacion)
+        {
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "UPDATE Licitaciones SET Estado = 1 WHERE Id = @idLicitacion";
+                        comando.Parameters.AddWithValue("@idLicitacion", idLicitacion);
+                        int filasAfectadas = comando.ExecuteNonQuery();
+
+                        return filasAfectadas > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al lanzar la licitación: " + ex.Message);
+                    return false;
+                }
+            }
+            
+        }
+
+
     }
 }
