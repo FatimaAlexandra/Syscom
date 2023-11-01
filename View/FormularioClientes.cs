@@ -264,5 +264,10 @@ namespace Syscom.View
         {
 
         }
+
+        private void cmbUsuarios_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

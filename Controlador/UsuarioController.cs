@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using Syscom.Modelo;
 using System;
 using System.Collections.Generic;
@@ -95,6 +96,45 @@ namespace Syscom.Controlador
             }
             conexionBD.CerrarConexion();
         }
+
+
+
+        public int ObtenerIdClientePorNombreUsuario(string nombreUsuario)
+        {
+            int idCliente = -1; // Valor predeterminado en caso de que no se encuentre un cliente
+
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT id FROM Clientes WHERE id_usuario = (SELECT id FROM Usuarios WHERE usuario = @nombreUsuario)";
+                        comando.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                idCliente = reader.GetInt32("id");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones, muestra un mensaje de error o registra la excepción
+                    Console.WriteLine("Error al obtener el ID de cliente: " + ex.Message);
+                    MessageBox.Show("Error al obtener el ID de cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return idCliente;
+        }
+
 
 
     }

@@ -17,7 +17,7 @@ namespace Syscom.Controlador
             conexion = new ConexionBD();
         }
 
-        public bool AutenticarUsuario(string usuario, string pass, out string rol)
+        public bool AutenticarUsuario( string usuario, string pass, out string rol)
         {
             rol = null;
             try

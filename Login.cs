@@ -4,6 +4,7 @@ using Syscom.Modelo;
 using Syscom.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace Syscom
 {
     public partial class Login : Form
@@ -16,9 +17,6 @@ namespace Syscom
             InitializeComponent();
             loginController = new LoginController();
             lblEstadoConexion.Visible = false;
-            btnCrudClientes.Visible = false;
-            btnProveedores.Visible = false;
-            btnMenu.Visible = false;
         }
 
         private void lblEstadoConexion_Click(object sender, EventArgs e)
@@ -107,6 +105,36 @@ namespace Syscom
                 txtPass.PasswordChar = '*'; // Ocultar la contraseña con asteriscos
             }
 
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 
