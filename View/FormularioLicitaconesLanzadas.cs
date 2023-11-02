@@ -69,7 +69,7 @@ namespace Syscom.View
                 );
             }
         }
-    
+
 
         private void FormularioLicitaconesLanzadas_Load(object sender, EventArgs e)
         {

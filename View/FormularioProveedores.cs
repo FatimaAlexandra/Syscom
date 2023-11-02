@@ -26,6 +26,14 @@ namespace Syscom.View
         {
             // Crear un objeto ProveedorModel y asignar valores desde los controles del formulario.
             ProveedoresModel nuevoProveedor = new ProveedoresModel();
+
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmpresa.Text))
+            {
+                MessageBox.Show("Todos los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la operación si hay campos vacíos
+            }
+
             nuevoProveedor.Nombre = txtNombre.Text;
             nuevoProveedor.Email = txtEmail.Text;
             nuevoProveedor.Telefono = txtTelefono.Text;
@@ -108,33 +116,44 @@ namespace Syscom.View
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView.
             if (dgvProveedores.SelectedRows.Count > 0)
             {
                 // Obtener el ID del proveedor seleccionado.
                 int proveedorId = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells["Id"].Value);
 
-                // Crear un objeto ProveedorModel con los datos modificados.
-                ProveedoresModel proveedorModificado = new ProveedoresModel
+                // Validar campos vacíos
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmpresa.Text))
                 {
-                    Id = proveedorId,
-                    Nombre = txtNombre.Text,
-                    Email = txtEmail.Text,
-                    Telefono = txtTelefono.Text,
-                    Empresa = txtEmpresa.Text
-                };
+                    MessageBox.Show("Por favor, complete todos los campos antes de guardar cambios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Crear un objeto ProveedorModel con los datos modificados.
+                    ProveedoresModel proveedorModificado = new ProveedoresModel
+                    {
+                        Id = proveedorId,
+                        Nombre = txtNombre.Text,
+                        Email = txtEmail.Text,
+                        Telefono = txtTelefono.Text,
+                        Empresa = txtEmpresa.Text
+                    };
 
-                // Llamar al método del controlador para actualizar el proveedor.
-                proveedoresController.ActualizarProveedor(proveedorModificado);
+                    // Llamar al método del controlador para actualizar el proveedor.
+                    proveedoresController.ActualizarProveedor(proveedorModificado);
 
-                // Limpiar los TextBox.
-                Limpiar();
+                    // Limpiar los TextBox.
+                    Limpiar();
 
-                // Mostrar un mensaje de "Cambios guardados exitosamente".
-                MessageBox.Show("Cambios guardados exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Mostrar un mensaje de "Cambios guardados exitosamente".
+                    MessageBox.Show("Cambios guardados exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Recargar la lista de proveedores en el DataGridView después de la edición.
-                CargarProveedoresEnDataGridView();
+                    // Recargar la lista de proveedores en el DataGridView después de la edición.
+                    CargarProveedoresEnDataGridView();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un proveedor para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

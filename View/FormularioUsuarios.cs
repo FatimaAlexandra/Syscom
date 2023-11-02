@@ -31,19 +31,29 @@ namespace Syscom.View
         {
             // Guardando los valores desde las txt
             UsuariosModel nuevoUsuario = new UsuariosModel();
+
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtPass.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtRol.Text))
+            {
+                MessageBox.Show("Todos los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la operación si hay campos vacíos
+            }
+
             nuevoUsuario.Usuario = txtUsuario.Text;
             nuevoUsuario.Pass = txtPass.Text;
             nuevoUsuario.Email = txtEmail.Text;
             nuevoUsuario.Rol = txtRol.Text;
 
-            // Insertando al usuario   DE FERRR
+            // Insertando al usuario
             usuarioController.InsertarUsuario(nuevoUsuario);
 
             // Limpiar los controles después de la inserción.
             Limpiar();
+
             // Mostrar un mensaje de "Agregado exitosamente".
             MessageBox.Show("Usuario agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Llamar al método para cargar y mostrar los clientes en el DataGridView.
+
+            // Llamar al método para cargar y mostrar los usuarios en el DataGridView.
             CargarUsuariosEnDataGridView();
         }
 
@@ -123,7 +133,7 @@ namespace Syscom.View
             // Verificar si se ha seleccionado una fila en el DataGridView.
             if (dgvUsuarios.SelectedRows.Count > 0)
             {
-                // Obtener el ID del cliente seleccionado.
+                // Obtener el ID del usuario seleccionado.
                 int usuarioId = Convert.ToInt32(dgvUsuarios.SelectedRows[0].Cells["Id"].Value);
 
                 // Crear un objeto usuarioModel con los datos modificados.
@@ -136,22 +146,22 @@ namespace Syscom.View
                     Rol = txtRol.Text
                 };
 
-                // Llamar al método del controlador para actualizar el usuario
+                // Verificar si algún campo está vacío
+                if (string.IsNullOrEmpty(usuarioModificado.Usuario) || string.IsNullOrEmpty(usuarioModificado.Pass) || string.IsNullOrEmpty(usuarioModificado.Email) || string.IsNullOrEmpty(usuarioModificado.Rol))
+                {
+                    MessageBox.Show("Todos los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Detener la operación si hay campos vacíos
+                }
+
+                // Llamar al método del controlador para actualizar el usuario.
                 usuarioController.ActualizarUsuarios(usuarioModificado);
 
-                // Deshabilitar los TextBox después de guardar los cambios.
-                /*txtUsuario.Enabled = false;
-                txtPass.Enabled = false;
-                txtEmail.Enabled = false;
-                txtRol.Enabled = false;*/
-
-                // Limpiar los TextBox.
                 Limpiar();
 
                 // Mostrar un mensaje de "Cambios guardados exitosamente".
                 MessageBox.Show("Cambios guardados exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Recargar la lista de clientes en el DataGridView después de la edición.
+                // Recargar la lista de usuarios en el DataGridView después de la edición.
                 CargarUsuariosEnDataGridView();
             }
         }

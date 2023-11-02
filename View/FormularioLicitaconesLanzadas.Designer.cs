@@ -31,7 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioLicitaconesLanzadas));
             dgvLicitaciones = new Guna.UI2.WinForms.Guna2DataGridView();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvLicitaciones).BeginInit();
             SuspendLayout();
             // 
@@ -87,21 +89,36 @@
             dgvLicitaciones.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvLicitaciones.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Stencil", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(176, 20);
+            label5.Name = "label5";
+            label5.Size = new Size(451, 44);
+            label5.TabIndex = 34;
+            label5.Text = "Licitaciones lanzadas";
+            // 
             // FormularioLicitaconesLanzadas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
             Controls.Add(dgvLicitaciones);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormularioLicitaconesLanzadas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioLicitaconesLanzadas";
             Load += FormularioLicitaconesLanzadas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvLicitaciones).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvLicitaciones;
+        private Label label5;
     }
 }

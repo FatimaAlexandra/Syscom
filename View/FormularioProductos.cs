@@ -108,6 +108,7 @@ namespace Syscom.View
             dgvProductos.Columns.Add("Cantidad", "Cantidad");
             // Puedes ocultar la columna "ID" si lo prefieres
             dgvProductos.Columns["Id"].Visible = false;
+            dgvProductos.Columns["PrecioUnitario"].Visible = false;
 
             foreach (ProductosModel producto in listaProductos)
             {
