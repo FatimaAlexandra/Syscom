@@ -175,10 +175,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(151, 12);
+            label5.Font = new Font("Cooper Black", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(134, 13);
             label5.Name = "label5";
-            label5.Size = new Size(384, 42);
+            label5.Size = new Size(422, 42);
             label5.TabIndex = 33;
             label5.Text = "Propuesta Económica";
             // 
@@ -230,30 +230,30 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(77, 167);
+            label4.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(68, 175);
             label4.Name = "label4";
-            label4.Size = new Size(117, 25);
+            label4.Size = new Size(140, 23);
             label4.TabIndex = 31;
             label4.Text = "ID Licitacion";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(77, 298);
+            label2.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(40, 304);
             label2.Name = "label2";
-            label2.Size = new Size(161, 25);
+            label2.Size = new Size(186, 23);
             label2.TabIndex = 29;
             label2.Text = "Precio Propuesta";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(77, 233);
+            label1.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(40, 239);
             label1.Name = "label1";
-            label1.Size = new Size(147, 25);
+            label1.Size = new Size(168, 23);
             label1.TabIndex = 28;
             label1.Text = "ID Proveedores";
             // 
