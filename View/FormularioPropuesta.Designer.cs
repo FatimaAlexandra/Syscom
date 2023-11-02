@@ -37,6 +37,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtPrecop = new Guna.UI2.WinForms.Guna2TextBox();
             txtIdproveedores = new Guna.UI2.WinForms.Guna2TextBox();
             txtIdli = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,6 +51,7 @@
             label4 = new Label();
             label2 = new Label();
             label1 = new Label();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -65,7 +68,7 @@
             txtPrecop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtPrecop.ForeColor = Color.Gray;
             txtPrecop.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPrecop.Location = new Point(230, 252);
+            txtPrecop.Location = new Point(232, 294);
             txtPrecop.Name = "txtPrecop";
             txtPrecop.PasswordChar = '\0';
             txtPrecop.PlaceholderText = "";
@@ -86,7 +89,7 @@
             txtIdproveedores.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdproveedores.ForeColor = Color.Gray;
             txtIdproveedores.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdproveedores.Location = new Point(229, 191);
+            txtIdproveedores.Location = new Point(231, 233);
             txtIdproveedores.Name = "txtIdproveedores";
             txtIdproveedores.PasswordChar = '\0';
             txtIdproveedores.PlaceholderText = "";
@@ -107,7 +110,7 @@
             txtIdli.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdli.ForeColor = Color.Gray;
             txtIdli.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdli.Location = new Point(229, 123);
+            txtIdli.Location = new Point(231, 165);
             txtIdli.Name = "txtIdli";
             txtIdli.PasswordChar = '\0';
             txtIdli.PlaceholderText = "";
@@ -183,7 +186,7 @@
             groupBox1.Controls.Add(btnEliminar);
             groupBox1.Controls.Add(btnAgregar);
             groupBox1.Controls.Add(btnLimpiar);
-            groupBox1.Location = new Point(393, 97);
+            groupBox1.Location = new Point(390, 136);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(190, 237);
             groupBox1.TabIndex = 32;
@@ -227,7 +230,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(75, 125);
+            label4.Location = new Point(77, 167);
             label4.Name = "label4";
             label4.Size = new Size(117, 25);
             label4.TabIndex = 31;
@@ -237,7 +240,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(75, 256);
+            label2.Location = new Point(77, 298);
             label2.Name = "label2";
             label2.Size = new Size(161, 25);
             label2.TabIndex = 29;
@@ -247,17 +250,39 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(75, 191);
+            label1.Location = new Point(77, 233);
             label1.Name = "label1";
             label1.Size = new Size(147, 25);
             label1.TabIndex = 28;
             label1.Text = "ID Proveedores";
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.CustomizableEdges = customizableEdges7;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(0, 192, 0);
+            guna2Button1.Font = new Font("Consolas", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.Image = Properties.Resources.licitacion;
+            guna2Button1.ImageAlign = HorizontalAlignment.Left;
+            guna2Button1.ImageSize = new Size(45, 45);
+            guna2Button1.Location = new Point(217, 74);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button1.Size = new Size(225, 56);
+            guna2Button1.TabIndex = 37;
+            guna2Button1.Text = "Ver licitaciones lanzadas";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // FormularioPropuesta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(630, 660);
+            Controls.Add(guna2Button1);
             Controls.Add(txtPrecop);
             Controls.Add(txtIdproveedores);
             Controls.Add(txtIdli);
@@ -290,5 +315,6 @@
         private Label label4;
         private Label label2;
         private Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Syscom.Modelo;
+﻿using Syscom.Controlador;
+using Syscom.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,23 +33,27 @@ namespace Syscom.View
             dgvLicitaciones.AutoGenerateColumns = false;
             dgvLicitaciones.Columns.Clear();
 
-            // Configurar las columnas del DataGridView (Asegúrate de que estas columnas coincidan con tu diseño de DataGridView)
+            // Configurar las columnas del DataGridView
             dgvLicitaciones.Columns.Add("Id", "ID");
             dgvLicitaciones.Columns.Add("Titulo", "Título");
             dgvLicitaciones.Columns.Add("Descripcion", "Descripción");
             dgvLicitaciones.Columns.Add("FechaInicio", "Fecha Inicio");
             dgvLicitaciones.Columns.Add("FechaFin", "Fecha Fin");
             dgvLicitaciones.Columns.Add("IdCliente", "ID Cliente");
+            dgvLicitaciones.Columns.Add("Estado", "Estado"); // Agrega la columna Estado
 
             // Llama al método para cargar las licitaciones con estado 1
             CargarLicitacionesConEstado1();
         }
 
-        // Método para cargar las licitaciones con estado 1
         private void CargarLicitacionesConEstado1()
         {
-            // Llamar al método para obtener las licitaciones con estado 1
-            licitaciones = ObtenerLicitacionesConEstado1();
+            // Llamar al método para obtener las licitaciones con estado 1 desde el controlador
+            LicitacionesController controller = new LicitacionesController();
+            licitaciones = controller.ObtenerLicitacionesConEstado1();
+
+            // Limpiar el DataGridView
+            dgvLicitaciones.Rows.Clear();
 
             // Recorrer la lista de licitaciones y agregar los datos al DataGridView
             foreach (LicitacionesModel licitacion in licitaciones)
@@ -59,22 +64,12 @@ namespace Syscom.View
                     licitacion.Descripcion,
                     licitacion.FechaInicio,
                     licitacion.FechaFin,
-                    licitacion.IdCliente
+                    licitacion.IdCliente,
+                    licitacion.Estado // Agregar el estado en la columna correspondiente
                 );
             }
         }
-
-        // Método para obtener las licitaciones con estado 1 (debes implementar este método)
-        private List<LicitacionesModel> ObtenerLicitacionesConEstado1()
-        {
-            // Implementa el código para obtener las licitaciones con estado 1 desde tu fuente de datos
-            // Retorna la lista de licitaciones con estado 1
-            List<LicitacionesModel> lista = new List<LicitacionesModel>();
-            // Agrega tus licitaciones con estado 1 a la lista
-            return lista;
-        }
-
-
+    
 
         private void FormularioLicitaconesLanzadas_Load(object sender, EventArgs e)
         {

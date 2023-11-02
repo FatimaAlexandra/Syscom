@@ -103,5 +103,11 @@ namespace Syscom.View
         {
             Limpiar();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            FormularioLicitaconesLanzadas frmLicitacionesLanzadas = new FormularioLicitaconesLanzadas();
+            frmLicitacionesLanzadas.ShowDialog();
+        }
     }
 }
