@@ -183,6 +183,7 @@ namespace Syscom.Controlador
                             {
                                 // Enviar un correo al cliente
                                 EnviarCorreo(email);
+                                EnviarCorreosAProveedores();
 
                                 return true;
                             }
@@ -218,6 +219,62 @@ namespace Syscom.Controlador
                 }
             }
         }
+
+        private void EnviarCorreoProve(string destinatario, string asunto, string cuerpo)
+        {
+            using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+            {
+                smtpClient.Port = 587;
+                smtpClient.Credentials = new NetworkCredential("diegocas2222@gmail.com", "ujvfkinedbpvqbmg");
+                smtpClient.EnableSsl = true;
+
+                using (MailMessage mensaje = new MailMessage())
+                {
+                    mensaje.From = new MailAddress("diegocas2222@gmail.com");
+                    mensaje.To.Add(destinatario);
+                    mensaje.Subject = asunto;
+                    mensaje.Body = cuerpo;
+
+                    smtpClient.Send(mensaje);
+                }
+            }
+        }
+
+        private void EnviarCorreosAProveedores()
+        {
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT email FROM Proveedores";
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string emailProveedor = reader["email"].ToString();
+                                EnviarCorreoProve(emailProveedor, "NUEVAS LICITACIONES", "Envie su oferta economica lo antes posible");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al enviar correos a proveedores: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+
 
 
         public List<LicitacionesModel> ObtenerLicitacionesConEstado1()
