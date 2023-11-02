@@ -46,6 +46,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioLicitaciones));
             label5 = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             txtEstado = new Guna.UI2.WinForms.Guna2TextBox();
@@ -301,6 +302,7 @@
             Controls.Add(txtId);
             Controls.Add(guna2Panel1);
             Controls.Add(label5);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormularioLicitaciones";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioLicitaciones";

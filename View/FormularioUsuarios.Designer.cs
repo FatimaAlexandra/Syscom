@@ -39,6 +39,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioUsuarios));
             label5 = new Label();
             txtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
@@ -318,6 +319,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(label1);
             Controls.Add(label5);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormularioUsuarios";
             StartPosition = FormStartPosition.CenterScreen;

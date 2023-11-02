@@ -39,6 +39,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPropuesta));
             txtPrecop = new Guna.UI2.WinForms.Guna2TextBox();
             txtIdproveedores = new Guna.UI2.WinForms.Guna2TextBox();
             txtIdli = new Guna.UI2.WinForms.Guna2TextBox();
@@ -292,6 +293,7 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormularioPropuesta";
             StartPosition = FormStartPosition.CenterScreen;
