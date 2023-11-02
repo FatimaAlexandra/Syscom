@@ -59,7 +59,7 @@ namespace Syscom.View
             PropuestasModelo nuevoPropuesta = new PropuestasModelo();
             nuevoPropuesta.ID_licitacion = Convert.ToInt32(txtIdli.Text);
             nuevoPropuesta.ID_proveedor = Convert.ToInt32(txtIdproveedores.Text);
-            nuevoPropuesta.Precio = Convert.ToDouble(txtPrecop);
+            nuevoPropuesta.Precio = Convert.ToDouble(txtPrecop.Text);
 
             // Llamar al método del controlador para insertar el proveedor.
             propuestaController.AgregarPropuestaEconomica(nuevoPropuesta);

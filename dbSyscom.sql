@@ -65,25 +65,31 @@ CREATE TABLE Productos (
     id_licitacion INT,
     FOREIGN KEY (id_licitacion) REFERENCES Licitaciones(id)
 );
+
+
+
+
+-- ---------------------INSERSIONES DE DATOS --------------------------------------- --
 select * from Clientes;
 -- Insertar usuarios
 INSERT INTO Usuarios (usuario, pass, email, rol) VALUES
-    ('Diego', '123', 'proveedor@ejemplo.com', 'cliente'),
-    ('Fatima', '123', 'proveedor@ejemplo.com', 'proveedor'),
-    ('Admin', '123', 'admin@ejemplo.com', 'administrador');
+    ('Admin', '123', 'admin@gmail.com', 'administrador'), 
+    ('Fatima', '123', 'proveedor@gmail.com', 'proveedor'),
+    ('Diego', '123', 'proveedor@gmail.com', 'cliente'),
+    ('Ronald', '12345', 'ronald@gmail.com', 'cliente'),
+    ('David', '12345', 'david@gmail.com', 'cliente'),
+    ('Edwin', '12345', 'edwin@gmail.com', 'cliente');
  
-select * from Usuarios;
-
 
 INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
-VALUES ('Diego Pablo Castillo', 'cr@email.com', '2345-6789', 'Casa Rivas', 1);
+VALUES ('Diego Pablo Castillo', 'cr@email.com', '2345-6789', 'Casa Rivas', 3);
 INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
 VALUES ('Ronald Hernandez', 'Manteinance@email.com', '2345-6789', 'Manteinance HR', 4);
 INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
 VALUES ('David Flores', 'TechSolutions@email.com', '2302-0789', 'TechSolutions', 5);
 
-Select * from Licitaciones;
-select * from Productos;
 
-INSERT INTO Clientes (nombre, email, telefono, empresa, id_usuario)
-VALUES ('Fatima Alexandra Castillo', 'glm@email.com', '2567-4567', 'GomezLee Marketing', 2);
+INSERT INTO Proveedores (nombre, email, telefono, empresa)
+VALUES ('Fatima Alexandra Castillo', 'glm@email.com', '2567-4567', 'GomezLee Marketing');
+INSERT INTO Proveedores (nombre, email, telefono, empresa)
+VALUES ('Sandra Garcia', 'markershare@gmail.com', '2567-4567', 'MarkerShare');

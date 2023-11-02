@@ -99,5 +99,11 @@ namespace Syscom.View
         {
             this.Close();
         }
+
+        private void btnPropuesta_Click(object sender, EventArgs e)
+        {
+            FormularioPropuesta frmPropuestas = new FormularioPropuesta();
+            frmPropuestas.ShowDialog();
+        }
     }
 }

@@ -215,6 +215,7 @@
             btnPropuesta.Size = new Size(225, 56);
             btnPropuesta.TabIndex = 1;
             btnPropuesta.Text = "Propuestas económicas";
+            btnPropuesta.Click += btnPropuesta_Click;
             // 
             // btnLicitacion
             // 
