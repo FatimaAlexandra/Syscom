@@ -62,9 +62,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Stencil", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(157, 26);
+            label5.Location = new Point(179, 35);
             label5.Name = "label5";
-            label5.Size = new Size(400, 35);
+            label5.Size = new Size(493, 44);
             label5.TabIndex = 13;
             label5.Text = "FORMULARIO DE USUARIOS";
             // 
@@ -80,23 +80,22 @@
             txtUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsuario.ForeColor = Color.Gray;
             txtUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtUsuario.Location = new Point(168, 94);
-            txtUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtUsuario.Location = new Point(192, 125);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PasswordChar = '\0';
             txtUsuario.PlaceholderText = "";
             txtUsuario.SelectedText = "";
             txtUsuario.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtUsuario.Size = new Size(342, 34);
+            txtUsuario.Size = new Size(391, 45);
             txtUsuario.TabIndex = 15;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(49, 104);
+            label1.Location = new Point(56, 139);
             label1.Name = "label1";
-            label1.Size = new Size(77, 19);
+            label1.Size = new Size(96, 24);
             label1.TabIndex = 14;
             label1.Text = "Usuario";
             // 
@@ -112,14 +111,13 @@
             txtRol.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtRol.ForeColor = Color.Gray;
             txtRol.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtRol.Location = new Point(168, 248);
-            txtRol.Margin = new Padding(3, 2, 3, 2);
+            txtRol.Location = new Point(192, 331);
             txtRol.Name = "txtRol";
             txtRol.PasswordChar = '\0';
             txtRol.PlaceholderText = "";
             txtRol.SelectedText = "";
             txtRol.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtRol.Size = new Size(342, 34);
+            txtRol.Size = new Size(391, 45);
             txtRol.TabIndex = 22;
             // 
             // txtEmail
@@ -134,14 +132,13 @@
             txtEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.ForeColor = Color.Gray;
             txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(166, 199);
-            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Location = new Point(190, 265);
             txtEmail.Name = "txtEmail";
             txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "";
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtEmail.Size = new Size(342, 34);
+            txtEmail.Size = new Size(391, 45);
             txtEmail.TabIndex = 21;
             // 
             // txtPass
@@ -156,24 +153,22 @@
             txtPass.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtPass.ForeColor = Color.Gray;
             txtPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPass.Location = new Point(168, 151);
-            txtPass.Margin = new Padding(3, 2, 3, 2);
+            txtPass.Location = new Point(192, 201);
             txtPass.Name = "txtPass";
             txtPass.PasswordChar = '*';
             txtPass.PlaceholderText = "";
             txtPass.SelectedText = "";
             txtPass.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtPass.Size = new Size(342, 34);
+            txtPass.Size = new Size(391, 45);
             txtPass.TabIndex = 20;
-           // txtPass.TextChanged += txtPass_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(49, 252);
+            label4.Location = new Point(56, 336);
             label4.Name = "label4";
-            label4.Size = new Size(39, 19);
+            label4.Size = new Size(48, 24);
             label4.TabIndex = 19;
             label4.Text = "Rol";
             // 
@@ -181,9 +176,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(49, 207);
+            label3.Location = new Point(56, 276);
             label3.Name = "label3";
-            label3.Size = new Size(56, 19);
+            label3.Size = new Size(69, 24);
             label3.TabIndex = 18;
             label3.Text = "Email";
             // 
@@ -191,9 +186,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(49, 151);
+            label2.Location = new Point(56, 201);
             label2.Name = "label2";
-            label2.Size = new Size(47, 19);
+            label2.Size = new Size(57, 24);
             label2.TabIndex = 17;
             label2.Text = "Pass";
             // 
@@ -203,11 +198,9 @@
             groupBox1.Controls.Add(btnModificarUsuario);
             groupBox1.Controls.Add(btnAgregarUsuario);
             groupBox1.Controls.Add(btnLimpiar);
-            groupBox1.Location = new Point(572, 94);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(654, 125);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(166, 206);
+            groupBox1.Size = new Size(190, 275);
             groupBox1.TabIndex = 23;
             groupBox1.TabStop = false;
             groupBox1.Text = "Acciones";
@@ -215,10 +208,9 @@
             // btnEliminarUsuario
             // 
             btnEliminarUsuario.BackColor = Color.FromArgb(255, 192, 192);
-            btnEliminarUsuario.Location = new Point(32, 102);
-            btnEliminarUsuario.Margin = new Padding(3, 2, 3, 2);
+            btnEliminarUsuario.Location = new Point(37, 136);
             btnEliminarUsuario.Name = "btnEliminarUsuario";
-            btnEliminarUsuario.Size = new Size(113, 37);
+            btnEliminarUsuario.Size = new Size(129, 49);
             btnEliminarUsuario.TabIndex = 11;
             btnEliminarUsuario.Text = "Eliminar";
             btnEliminarUsuario.UseVisualStyleBackColor = false;
@@ -227,10 +219,9 @@
             // btnModificarUsuario
             // 
             btnModificarUsuario.BackColor = Color.FromArgb(255, 255, 192);
-            btnModificarUsuario.Location = new Point(32, 61);
-            btnModificarUsuario.Margin = new Padding(3, 2, 3, 2);
+            btnModificarUsuario.Location = new Point(37, 81);
             btnModificarUsuario.Name = "btnModificarUsuario";
-            btnModificarUsuario.Size = new Size(113, 37);
+            btnModificarUsuario.Size = new Size(129, 49);
             btnModificarUsuario.TabIndex = 10;
             btnModificarUsuario.Text = "Modificar";
             btnModificarUsuario.UseVisualStyleBackColor = false;
@@ -239,10 +230,9 @@
             // btnAgregarUsuario
             // 
             btnAgregarUsuario.BackColor = Color.FromArgb(192, 255, 192);
-            btnAgregarUsuario.Location = new Point(32, 20);
-            btnAgregarUsuario.Margin = new Padding(3, 2, 3, 2);
+            btnAgregarUsuario.Location = new Point(37, 27);
             btnAgregarUsuario.Name = "btnAgregarUsuario";
-            btnAgregarUsuario.Size = new Size(113, 37);
+            btnAgregarUsuario.Size = new Size(129, 49);
             btnAgregarUsuario.TabIndex = 8;
             btnAgregarUsuario.Text = "Agregar";
             btnAgregarUsuario.UseVisualStyleBackColor = false;
@@ -251,10 +241,9 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.FromArgb(192, 192, 255);
-            btnLimpiar.Location = new Point(32, 143);
-            btnLimpiar.Margin = new Padding(3, 2, 3, 2);
+            btnLimpiar.Location = new Point(37, 191);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(113, 37);
+            btnLimpiar.Size = new Size(129, 49);
             btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -283,13 +272,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.GridColor = Color.FromArgb(231, 229, 255);
-            dgvUsuarios.Location = new Point(65, 316);
-            dgvUsuarios.Margin = new Padding(3, 2, 3, 2);
+            dgvUsuarios.Location = new Point(74, 421);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.RowHeadersWidth = 51;
             dgvUsuarios.RowTemplate.Height = 29;
-            dgvUsuarios.Size = new Size(673, 141);
+            dgvUsuarios.Size = new Size(769, 188);
             dgvUsuarios.TabIndex = 24;
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvUsuarios.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -316,9 +304,9 @@
             // 
             // FormularioUsuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(841, 485);
+            ClientSize = new Size(961, 647);
             Controls.Add(dgvUsuarios);
             Controls.Add(groupBox1);
             Controls.Add(txtRol);
@@ -330,7 +318,9 @@
             Controls.Add(txtUsuario);
             Controls.Add(label1);
             Controls.Add(label5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormularioUsuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioUsuarios";
             Load += FormularioUsuarios_Load;
             groupBox1.ResumeLayout(false);

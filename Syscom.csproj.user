@@ -13,7 +13,13 @@
     <Compile Update="View\FormularioLicitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\FormularioLicitaconesLanzadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\FormularioProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\FormularioPropuesta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\FormularioProveedores.cs">

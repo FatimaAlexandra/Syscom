@@ -316,6 +316,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "FormularioProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioProductos";
             Load += FormularioProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();

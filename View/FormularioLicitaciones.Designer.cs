@@ -302,6 +302,7 @@
             Controls.Add(guna2Panel1);
             Controls.Add(label5);
             Name = "FormularioLicitaciones";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioLicitaciones";
             Load += FormularioLicitaciones_Load;
             guna2Panel1.ResumeLayout(false);
