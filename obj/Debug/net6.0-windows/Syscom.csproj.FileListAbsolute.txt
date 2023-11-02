@@ -43,3 +43,6 @@ C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.Formul
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioProductos.resources
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.Properties.Resources.resources
 C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioUsuarios.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioOfertasEconomicas.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioPropuesta.resources
+C:\Users\lenovo\Documents\UES\Syscom\obj\Debug\net6.0-windows\Syscom.View.FormularioLicitaconesLanzadas.resources

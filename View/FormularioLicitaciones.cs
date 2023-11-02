@@ -28,7 +28,9 @@ namespace Syscom.View
             InitializeComponent();
             usuariosController = new UsuarioController();
             btnGenerarLicitacion.Enabled = true;
-
+            txtId.Visible = false;
+            txtIdCliente.Visible = false;
+            txtEstado.Visible = false;
 
             // Obtén el ID del cliente actual
             int idClienteActual = usuarioController.ObtenerIdClientePorNombreUsuario(usuario);

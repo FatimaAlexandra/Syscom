@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -117,7 +119,6 @@ namespace Syscom.Controlador
         }
 
 
-
         public bool LanzarLicitacion(int idLicitacion)
         {
             using (ConexionBD conexionBD = new ConexionBD())
@@ -128,13 +129,37 @@ namespace Syscom.Controlador
                 {
                     using (MySqlCommand comando = new MySqlCommand())
                     {
+                        // Obtener el id_cliente asociado a la licitación
                         comando.Connection = conexion;
-                        comando.CommandText = "UPDATE Licitaciones SET Estado = 1 WHERE Id = @idLicitacion";
+                        comando.CommandText = "SELECT id_cliente FROM Licitaciones WHERE Id = @idLicitacion";
                         comando.Parameters.AddWithValue("@idLicitacion", idLicitacion);
-                        int filasAfectadas = comando.ExecuteNonQuery();
+                        int idCliente = Convert.ToInt32(comando.ExecuteScalar());
 
-                        return filasAfectadas > 0;
+                        if (idCliente > 0)
+                        {
+                            // Ahora que tienes el id del cliente, puedes obtener su email
+                            comando.CommandText = "SELECT email FROM Clientes WHERE id = @idCliente";
+                            comando.Parameters.AddWithValue("@idCliente", idCliente);
+                            string email = comando.ExecuteScalar().ToString();
+
+                            // Actualizar el estado de la licitación
+                            comando.CommandText = "UPDATE Licitaciones SET Estado = 1 WHERE Id = @idLicitacion";
+                            comando.Parameters.Clear();
+                            comando.Parameters.AddWithValue("@idLicitacion", idLicitacion);
+                            int filasAfectadas = comando.ExecuteNonQuery();
+
+                            if (filasAfectadas > 0)
+                            {
+                                // Enviar un correo al cliente
+                                EnviarCorreo(email);
+                                EnviarCorreosAProveedores();
+
+                                return true;
+                            }
+                        }
                     }
+
+                    return false;
                 }
                 catch (Exception ex)
                 {
@@ -143,8 +168,131 @@ namespace Syscom.Controlador
                     return false;
                 }
             }
-            
         }
+        private void EnviarCorreo(string destinatario)
+        {
+            using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+            {
+                smtpClient.Port = 587;
+                smtpClient.Credentials = new NetworkCredential("diegocas2222@gmail.com", "ujvfkinedbpvqbmg");
+                smtpClient.EnableSsl = true;
+
+                using (MailMessage mensaje = new MailMessage())
+                {
+                    mensaje.From = new MailAddress("diegocas2222@gmail.com");
+                    mensaje.To.Add(destinatario);
+                    mensaje.Subject = "Licitaciones";
+                    mensaje.Body = "Se han lanzado las licitaciones";
+
+                    smtpClient.Send(mensaje);
+                }
+            }
+        }
+
+        private void EnviarCorreoProve(string destinatario, string asunto, string cuerpo)
+        {
+            using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
+            {
+                smtpClient.Port = 587;
+                smtpClient.Credentials = new NetworkCredential("diegocas2222@gmail.com", "ujvfkinedbpvqbmg");
+                smtpClient.EnableSsl = true;
+
+                using (MailMessage mensaje = new MailMessage())
+                {
+                    mensaje.From = new MailAddress("diegocas2222@gmail.com");
+                    mensaje.To.Add(destinatario);
+                    mensaje.Subject = asunto;
+                    mensaje.Body = cuerpo;
+
+                    smtpClient.Send(mensaje);
+                }
+            }
+        }
+
+        private void EnviarCorreosAProveedores()
+        {
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT email FROM Proveedores";
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string emailProveedor = reader["email"].ToString();
+                                EnviarCorreoProve(emailProveedor, "NUEVAS LICITACIONES", "Envie su oferta economica lo antes posible");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al enviar correos a proveedores: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+
+
+
+        public List<LicitacionesModel> ObtenerLicitacionesConEstado1()
+        {
+            List<LicitacionesModel> licitaciones = new List<LicitacionesModel>();
+
+            using (ConexionBD conexionBD = new ConexionBD())
+            {
+                MySqlConnection conexion = conexionBD.ObtenerConexion();
+
+                try
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        comando.Connection = conexion;
+                        comando.CommandText = "SELECT * FROM Licitaciones WHERE estado = '1'";
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                LicitacionesModel licitacion = new LicitacionesModel
+                                {
+                                    Id = reader.GetInt32("id"),
+                                    Titulo = reader.GetString("titulo"),
+                                    Descripcion = reader.GetString("descripcion"),
+                                    FechaInicio = reader.GetDateTime("fecha_inicio"),
+                                    FechaFin = reader.GetDateTime("fecha_fin"),
+                                    Estado = reader.GetString("estado"),
+                                    IdCliente = reader.GetInt32("id_cliente")
+                                };
+                                licitaciones.Add(licitacion);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones
+                    Console.WriteLine("Error al obtener las licitaciones: " + ex.Message);
+                }
+            }
+
+            return licitaciones;
+        }
+
+
+
+
+
 
 
     }
