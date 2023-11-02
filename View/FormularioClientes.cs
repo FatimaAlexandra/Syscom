@@ -36,6 +36,12 @@ namespace Syscom.View
             // Obtiene el ID del usuario seleccionado en el ComboBox
             int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 
+            // Verifica si algún campo está vacío
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(telefono) || string.IsNullOrEmpty(empresa) || idUsuario == 0)
+            {
+                MessageBox.Show("Todos los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la operación si hay campos vacíos
+            }
 
             // Crea una instancia de ClientesModel con los datos del cliente
             ClientesModel cliente = new ClientesModel
@@ -55,12 +61,13 @@ namespace Syscom.View
 
                 // Limpia los campos después de insertar el cliente
                 Limpiar();
+                CargarClientesEnDataGridView();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al insertar el cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            CargarClientesEnDataGridView();
+
         }
         private void Limpiar()
         {
@@ -176,6 +183,13 @@ namespace Syscom.View
                     Empresa = txtEmpresa.Text,
                     IdUsuario = cmbUsuarios.SelectedIndex
                 };
+
+                // Verificar si algún campo está vacío
+                if (string.IsNullOrEmpty(clienteModificado.Nombre) || string.IsNullOrEmpty(clienteModificado.Email) || string.IsNullOrEmpty(clienteModificado.Telefono) || string.IsNullOrEmpty(clienteModificado.Empresa))
+                {
+                    MessageBox.Show("Todos los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Detener la operación si hay campos vacíos
+                }
 
                 // Llamar al método del controlador para actualizar el cliente.
                 clientesController.ActualizarCliente(clienteModificado);

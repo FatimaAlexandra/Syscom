@@ -57,21 +57,29 @@ namespace Syscom.View
         {
             // Crear un objeto ProveedorModel y asignar valores desde los controles del formulario.
             PropuestasModelo nuevoPropuesta = new PropuestasModelo();
+
+            if (string.IsNullOrEmpty(txtIdli.Text) || string.IsNullOrEmpty(txtIdproveedores.Text) || string.IsNullOrEmpty(txtPrecop.Text))
+            {
+                MessageBox.Show("Todos los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la operación si hay campos vacíos
+            }
+
             nuevoPropuesta.ID_licitacion = Convert.ToInt32(txtIdli.Text);
             nuevoPropuesta.ID_proveedor = Convert.ToInt32(txtIdproveedores.Text);
             nuevoPropuesta.Precio = Convert.ToDouble(txtPrecop.Text);
 
-            // Llamar al método del controlador para insertar el proveedor.
+            // Llamar al método del controlador para insertar la propuesta.
             propuestaController.AgregarPropuestaEconomica(nuevoPropuesta);
 
             // Limpiar los controles después de la inserción.
             Limpiar();
 
-            // Mostrar un mensaje de "Proveedor agregado exitosamente".
-            MessageBox.Show("Propuesta agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Mostrar un mensaje de "Propuesta agregada exitosamente".
+            MessageBox.Show("Propuesta agregada exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Llamar al método para cargar y mostrar los proveedores en el DataGridView.
+            // Llamar al método para cargar y mostrar las propuestas en el DataGridView.
             CargarPropuestasEnDataGridView();
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
