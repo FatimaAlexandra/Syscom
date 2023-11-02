@@ -93,3 +93,11 @@ INSERT INTO Proveedores (nombre, email, telefono, empresa)
 VALUES ('Fatima Alexandra Castillo', 'glm@email.com', '2567-4567', 'GomezLee Marketing');
 INSERT INTO Proveedores (nombre, email, telefono, empresa)
 VALUES ('Sandra Garcia', 'markershare@gmail.com', '2567-4567', 'MarkerShare');
+
+INSERT INTO Licitaciones (titulo, descripcion, fecha_inicio, fecha_fin, estado,id_cliente)
+VALUES ('Licitación de Construcción', 'Construccion de edificio', '2023-10-31', '2023-11-30', '0',1);
+
+
+select * from PropuestasEconomicas;
+select * from Licitaciones;
+select * from Proveedores;

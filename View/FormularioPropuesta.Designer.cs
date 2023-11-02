@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             txtPrecop = new Guna.UI2.WinForms.Guna2TextBox();
             txtIdproveedores = new Guna.UI2.WinForms.Guna2TextBox();
             txtIdli = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,7 +55,7 @@
             // 
             // txtPrecop
             // 
-            txtPrecop.CustomizableEdges = customizableEdges13;
+            txtPrecop.CustomizableEdges = customizableEdges1;
             txtPrecop.DefaultText = "";
             txtPrecop.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtPrecop.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -65,19 +65,18 @@
             txtPrecop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtPrecop.ForeColor = Color.Gray;
             txtPrecop.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPrecop.Location = new Point(201, 189);
-            txtPrecop.Margin = new Padding(3, 2, 3, 2);
+            txtPrecop.Location = new Point(230, 252);
             txtPrecop.Name = "txtPrecop";
             txtPrecop.PasswordChar = '\0';
             txtPrecop.PlaceholderText = "";
             txtPrecop.SelectedText = "";
-            txtPrecop.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txtPrecop.Size = new Size(114, 34);
+            txtPrecop.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtPrecop.Size = new Size(130, 45);
             txtPrecop.TabIndex = 36;
             // 
             // txtIdproveedores
             // 
-            txtIdproveedores.CustomizableEdges = customizableEdges15;
+            txtIdproveedores.CustomizableEdges = customizableEdges3;
             txtIdproveedores.DefaultText = "";
             txtIdproveedores.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtIdproveedores.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -87,19 +86,18 @@
             txtIdproveedores.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdproveedores.ForeColor = Color.Gray;
             txtIdproveedores.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdproveedores.Location = new Point(200, 143);
-            txtIdproveedores.Margin = new Padding(3, 2, 3, 2);
+            txtIdproveedores.Location = new Point(229, 191);
             txtIdproveedores.Name = "txtIdproveedores";
             txtIdproveedores.PasswordChar = '\0';
             txtIdproveedores.PlaceholderText = "";
             txtIdproveedores.SelectedText = "";
-            txtIdproveedores.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txtIdproveedores.Size = new Size(114, 34);
+            txtIdproveedores.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtIdproveedores.Size = new Size(130, 45);
             txtIdproveedores.TabIndex = 35;
             // 
             // txtIdli
             // 
-            txtIdli.CustomizableEdges = customizableEdges17;
+            txtIdli.CustomizableEdges = customizableEdges5;
             txtIdli.DefaultText = "";
             txtIdli.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtIdli.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -109,46 +107,44 @@
             txtIdli.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdli.ForeColor = Color.Gray;
             txtIdli.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdli.Location = new Point(200, 92);
-            txtIdli.Margin = new Padding(3, 2, 3, 2);
+            txtIdli.Location = new Point(229, 123);
             txtIdli.Name = "txtIdli";
             txtIdli.PasswordChar = '\0';
             txtIdli.PlaceholderText = "";
             txtIdli.SelectedText = "";
-            txtIdli.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtIdli.Size = new Size(112, 34);
+            txtIdli.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtIdli.Size = new Size(128, 45);
             txtIdli.TabIndex = 27;
             // 
             // dgvProveedores
             // 
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dgvProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.Teal;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Teal;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Teal;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvProveedores.ColumnHeadersHeight = 50;
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            dgvProveedores.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvProveedores.DefaultCellStyle = dataGridViewCellStyle3;
             dgvProveedores.GridColor = Color.FromArgb(231, 229, 255);
-            dgvProveedores.Location = new Point(66, 296);
-            dgvProveedores.Margin = new Padding(3, 2, 3, 2);
+            dgvProveedores.Location = new Point(75, 395);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersVisible = false;
             dgvProveedores.RowHeadersWidth = 51;
             dgvProveedores.RowTemplate.Height = 29;
-            dgvProveedores.Size = new Size(431, 168);
+            dgvProveedores.Size = new Size(493, 224);
             dgvProveedores.TabIndex = 34;
             dgvProveedores.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvProveedores.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -176,9 +172,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(132, 9);
+            label5.Location = new Point(151, 12);
             label5.Name = "label5";
-            label5.Size = new Size(306, 36);
+            label5.Size = new Size(384, 42);
             label5.TabIndex = 33;
             label5.Text = "Propuesta Económica";
             // 
@@ -187,11 +183,9 @@
             groupBox1.Controls.Add(btnEliminar);
             groupBox1.Controls.Add(btnAgregar);
             groupBox1.Controls.Add(btnLimpiar);
-            groupBox1.Location = new Point(344, 73);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(393, 97);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(166, 178);
+            groupBox1.Size = new Size(190, 237);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             groupBox1.Text = "Acciones";
@@ -199,10 +193,9 @@
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
-            btnEliminar.Location = new Point(32, 69);
-            btnEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnEliminar.Location = new Point(37, 92);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(113, 37);
+            btnEliminar.Size = new Size(129, 49);
             btnEliminar.TabIndex = 11;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -211,10 +204,9 @@
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
-            btnAgregar.Location = new Point(32, 20);
-            btnAgregar.Margin = new Padding(3, 2, 3, 2);
+            btnAgregar.Location = new Point(37, 27);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(113, 37);
+            btnAgregar.Size = new Size(129, 49);
             btnAgregar.TabIndex = 8;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -223,10 +215,9 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.FromArgb(192, 255, 255);
-            btnLimpiar.Location = new Point(32, 117);
-            btnLimpiar.Margin = new Padding(3, 2, 3, 2);
+            btnLimpiar.Location = new Point(37, 156);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(113, 37);
+            btnLimpiar.Size = new Size(129, 49);
             btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -236,9 +227,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(66, 94);
+            label4.Location = new Point(75, 125);
             label4.Name = "label4";
-            label4.Size = new Size(96, 20);
+            label4.Size = new Size(117, 25);
             label4.TabIndex = 31;
             label4.Text = "ID Licitacion";
             // 
@@ -246,9 +237,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(66, 192);
+            label2.Location = new Point(75, 256);
             label2.Name = "label2";
-            label2.Size = new Size(130, 20);
+            label2.Size = new Size(161, 25);
             label2.TabIndex = 29;
             label2.Text = "Precio Propuesta";
             // 
@@ -256,17 +247,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(66, 143);
+            label1.Location = new Point(75, 191);
             label1.Name = "label1";
-            label1.Size = new Size(119, 20);
+            label1.Size = new Size(147, 25);
             label1.TabIndex = 28;
             label1.Text = "ID Proveedores";
             // 
             // FormularioPropuesta
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(551, 495);
+            ClientSize = new Size(630, 660);
             Controls.Add(txtPrecop);
             Controls.Add(txtIdproveedores);
             Controls.Add(txtIdli);
@@ -276,7 +267,9 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormularioPropuesta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioPropuesta";
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             groupBox1.ResumeLayout(false);

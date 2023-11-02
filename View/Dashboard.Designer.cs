@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pictureBox2 = new PictureBox();
@@ -54,6 +56,7 @@
             lblRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -266,12 +269,34 @@
             guna2HtmlLabel2.TabIndex = 7;
             guna2HtmlLabel2.Text = "Usted ha iniciado sesión como:";
             // 
+            // guna2Button1
+            // 
+            guna2Button1.CustomizableEdges = customizableEdges13;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(192, 255, 255);
+            guna2Button1.Font = new Font("Consolas", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.Image = Properties.Resources.propuesta;
+            guna2Button1.ImageAlign = HorizontalAlignment.Left;
+            guna2Button1.ImageSize = new Size(45, 45);
+            guna2Button1.Location = new Point(281, 234);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button1.Size = new Size(225, 56);
+            guna2Button1.TabIndex = 13;
+            guna2Button1.Text = "Ver licitaciones lanzadas";
+            guna2Button1.Click += guna2Button1_Click_1;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 525);
             ControlBox = false;
+            Controls.Add(guna2Button1);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(lblRol);
             Controls.Add(guna2HtmlLabel1);
@@ -306,5 +331,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

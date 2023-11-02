@@ -105,5 +105,11 @@ namespace Syscom.View
             FormularioPropuesta frmPropuestas = new FormularioPropuesta();
             frmPropuestas.ShowDialog();
         }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            FormularioLicitaconesLanzadas frmLicitaconesLanzadas = new FormularioLicitaconesLanzadas();
+            frmLicitaconesLanzadas.ShowDialog();
+        }
     }
 }

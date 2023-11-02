@@ -323,6 +323,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormularioProveedores";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormularioProveedores";
             Load += txtNombre_TextChanged;
             groupBox1.ResumeLayout(false);
